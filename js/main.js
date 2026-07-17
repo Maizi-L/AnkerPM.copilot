@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
  * 初始化全局导航
  */
 function initGlobalNavigation() {
-    const navItems = document.querySelectorAll('.global-navbar .nav-item');
-
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const page = this.dataset.page;
+    // 使用事件委托处理左边栏导航点击
+    document.addEventListener('click', function(e) {
+        const navItem = e.target.closest('.sidebar-nav-item');
+        if (navItem) {
+            const page = navItem.dataset.page;
             switchGlobalPage(page);
-        });
+        }
     });
 }
 
@@ -35,8 +35,8 @@ function initGlobalNavigation() {
  * 全局页面切换
  */
 function switchGlobalPage(page) {
-    // 更新导航栏状态
-    document.querySelectorAll('.global-navbar .nav-item').forEach(item => {
+    // 更新左边栏导航状态
+    document.querySelectorAll('.sidebar-nav-item').forEach(item => {
         item.classList.remove('active');
         if (item.dataset.page === page) {
             item.classList.add('active');

@@ -5,53 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI产品经理工作台</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/sidebar-layout.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/data.js"></script>
 </head>
 <body>
     <div class="container">
         <!-- 全局顶部导航栏 -->
-        <!-- 左右布局容器 -->
-        <div class="app-container">
-            <!-- 左侧边栏 -->
-            <aside class="sidebar">
-                <!-- Logo区域 -->
-                <div class="sidebar-logo">
-                    <div class="logo-icon">🚀</div>
-                    <span class="logo-text">AI产品经理</span>
+        <nav class="global-navbar" id="globalNavbar">
+            <div class="navbar-brand">
+                <i class="fas fa-rocket brand-icon"></i>
+                <div class="brand-text">
+                    <h2 class="navbar-title">AI产品经理工作台</h2>
+                    <p class="navbar-subtitle">Anker创新</p>
                 </div>
-
-                <!-- 主导航 -->
-                <nav class="sidebar-nav">
-                    <button class="sidebar-nav-item active" data-page="home">
-                        <i class="fas fa-home"></i>
-                        <span>首页</span>
-                    </button>
-                    <button class="sidebar-nav-item" data-page="projects">
-                        <i class="fas fa-folder"></i>
-                        <span>我的项目</span>
-                    </button>
-                    <button class="sidebar-nav-item" data-page="help">
-                        <i class="fas fa-question-circle"></i>
-                        <span>帮助</span>
-                    </button>
-                </nav>
-
-                <!-- 用户信息 -->
-                <div class="sidebar-user">
-                    <div class="user-avatar">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <div class="user-info">
-                        <div class="user-name">产品经理</div>
-                        <div class="user-role">PM</div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- 主内容区 -->
-            <main class="main-content">
+            </div>
+            <div class="navbar-menu">
+                <button class="nav-item active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>首页</span>
+                </button>
+                <button class="nav-item" data-page="projects">
+                    <i class="fas fa-folder"></i>
+                    <span>我的项目</span>
+                </button>
+                <button class="nav-item" data-page="help">
+                    <i class="fas fa-question-circle"></i>
+                    <span>帮助</span>
+                </button>
+            </div>
+            <div class="navbar-user">
+                <i class="fas fa-user-circle"></i>
+                <span>产品经理</span>
+            </div>
+        </nav>
 
         <!-- 旧的导航栏（删除） -->
 
@@ -2153,8 +2139,6 @@
             </p>
         </section>
 
-            </main>
-        </div>
     </div>
 
     <script src="js/main.js"></script>
