@@ -151,16 +151,16 @@ function openProjectDetail(projectId) {
 }
 
 /**
- * 初始化侧边栏
+ * 初始化侧边栏（项目详情页Tab导航）
  */
 function initSidebar() {
-    const sidebarItems = document.querySelectorAll('.sidebar-item');
-
-    sidebarItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const tab = this.dataset.tab;
+    // 使用事件委托处理Tab点击
+    document.addEventListener('click', function(e) {
+        const tabItem = e.target.closest('.tab-nav-item');
+        if (tabItem) {
+            const tab = tabItem.dataset.tab;
             switchTab(tab);
-        });
+        }
     });
 }
 
@@ -168,8 +168,8 @@ function initSidebar() {
  * 切换标签页
  */
 function switchTab(tab) {
-    // 更新侧边栏状态
-    document.querySelectorAll('.sidebar-item').forEach(item => {
+    // 更新Tab导航状态
+    document.querySelectorAll('.tab-nav-item').forEach(item => {
         item.classList.remove('active');
         if (item.dataset.tab === tab) {
             item.classList.add('active');

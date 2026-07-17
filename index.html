@@ -18,7 +18,6 @@
             <aside class="sidebar">
                 <!-- Logo区域 -->
                 <div class="sidebar-logo">
-                    <div class="logo-icon">🚀</div>
                     <span class="logo-text">AI产品经理</span>
                 </div>
 
@@ -509,45 +508,51 @@
 
         <!-- ==================== 页面4：项目详情（带侧边栏） ==================== -->
         <div class="page-content project-detail-page" id="page-projectdetail" style="display: none;">
-            <!-- 侧边栏 -->
-            <div class="sidebar">
-                <div class="sidebar-header">
-                    <button class="btn-back" id="backToProjects">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>返回项目列表</span>
-                    </button>
+            <!-- 顶部面包屑导航 -->
+            <div class="project-header">
+                <button class="btn-back-inline" id="backToProjects">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>返回项目列表</span>
+                </button>
+                <div class="project-title-section">
+                    <div class="project-icon-small">开</div>
+                    <div class="project-info-inline">
+                        <h2 class="project-name-header">开放式耳机-运动款</h2>
+                        <div class="project-meta-header">
+                            <span class="meta-tag">PRJ001</span>
+                            <span class="meta-tag">创建于 2024-07-15</span>
+                            <span class="meta-tag success">分析完成</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-info-sidebar">
-                    <div class="project-icon-sidebar">开</div>
-                    <h3 class="project-name-sidebar">开放式耳机-运动款</h3>
-                    <p class="project-id-sidebar">PRJ001</p>
-                </div>
-                <nav class="sidebar-nav">
-                    <button class="sidebar-item active" data-tab="overview">
-                        <i class="fas fa-chart-line"></i>
-                        <span>概览</span>
-                    </button>
-                    <button class="sidebar-item" data-tab="datasync">
-                        <i class="fas fa-database"></i>
-                        <span>信息协同</span>
-                    </button>
-                    <button class="sidebar-item" data-tab="analysis">
-                        <i class="fas fa-brain"></i>
-                        <span>AI分析</span>
-                    </button>
-                    <button class="sidebar-item" data-tab="decision">
-                        <i class="fas fa-balance-scale"></i>
-                        <span>人机协作决策</span>
-                    </button>
-                    <button class="sidebar-item" data-tab="document">
-                        <i class="fas fa-file-alt"></i>
-                        <span>文档输出</span>
-                    </button>
-                </nav>
             </div>
 
-            <!-- 主内容区 -->
-            <div class="main-content">
+            <!-- Tab导航 -->
+            <div class="project-tabs">
+                <button class="tab-nav-item active" data-tab="overview">
+                    <i class="fas fa-chart-line"></i>
+                    <span>概览</span>
+                </button>
+                <button class="tab-nav-item" data-tab="datasync">
+                    <i class="fas fa-database"></i>
+                    <span>信息协同</span>
+                </button>
+                <button class="tab-nav-item" data-tab="analysis">
+                    <i class="fas fa-brain"></i>
+                    <span>AI分析</span>
+                </button>
+                <button class="tab-nav-item" data-tab="decision">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>人机协作决策</span>
+                </button>
+                <button class="tab-nav-item" data-tab="document">
+                    <i class="fas fa-file-alt"></i>
+                    <span>文档输出</span>
+                </button>
+            </div>
+
+            <!-- Tab内容区 -->
+            <div class="project-content">
                 <!-- 概览标签页 -->
                 <div class="tab-content active" id="tab-overview">
                     <h2 class="content-title">项目概览</h2>
