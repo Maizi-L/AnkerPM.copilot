@@ -2483,7 +2483,7 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 24px 32px;
+    padding: 20px 32px;
     background: white;
     border-bottom: 1px solid #e9ecef;
     flex-shrink: 0;
@@ -2533,6 +2533,9 @@ body {
 }
 
 .project-info-inline {
+    display: flex;
+    align-items: center;
+    gap: 24px;
     flex: 1;
 }
 
@@ -2540,7 +2543,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     color: #2c3e50;
-    margin-bottom: 6px;
+    margin: 0;
 }
 
 .project-meta-header {
@@ -2571,7 +2574,7 @@ body {
     border-bottom: 2px solid #e9ecef;
     flex-shrink: 0;
     position: sticky;
-    top: 97px;
+    top: 69px;
     z-index: 99;
 }
 
