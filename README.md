@@ -2,7 +2,7 @@
 
 > AI 原生新品规划决策系统（基于飞书生态） | 2026飞书AI先锋参赛项目
 
-[![在线演示](https://img.shields.io/badge/演示-Vercel-black?style=flat&logo=vercel)](anker-pm-copilot.vercel.app)
+[![在线演示](https://img.shields.io/badge/演示-Vercel-black?style=flat&logo=vercel)](https://anker-pm-copilot.vercel.app)
 [![Cloudflare Pages](https://img.shields.io/badge/国内访问-Cloudflare-orange?style=flat&logo=cloudflare)](https://ankerpm-copilot.pages.dev)
 [![GitHub](https://img.shields.io/badge/GitHub-AnkerPM.copilot-blue?style=flat&logo=github)](https://github.com/Maizi-L/AnkerPM.copilot)
 
