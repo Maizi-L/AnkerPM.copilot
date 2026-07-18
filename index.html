@@ -61,21 +61,15 @@
         <!-- ==================== 页面1：首页 ==================== -->
         <div class="page-content" id="page-home">
             <!-- Hero区域 -->
-            <!-- Hero区域 - 视频背景版本 -->
+            <!-- Hero区域 - 左右布局 -->
             <section class="hero-section-v2">
-                <!-- 视频背景 -->
-                <video class="hero-bg-video" autoplay muted loop playsinline>
-                    <source src="images/hero-bg-video.mp4" type="video/mp4">
-                </video>
-
-                <!-- 遮罩层 -->
-                <div class="hero-video-overlay"></div>
-
-                <!-- 内容居中 -->
-                <div class="hero-content-center">
+                <div class="hero-content-left">
                     <h1 class="hero-title-large">AnkerPM.copilot</h1>
                     <p class="hero-subtitle-line">基于飞书生态的多 Agent 消费电子新品规划系统</p>
                     <p class="hero-subtitle-line">串联「信息采集 → AI 分析 → PM 共创 → 方案生成」全流程</p>
+                </div>
+                <div class="hero-image-right">
+                    <img src="images/hero-illustration.png" alt="AnkerPM.copilot" class="hero-illustration">
                 </div>
             </section>
 
@@ -2219,5 +2213,6 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script src="js/orbit-scroll.js"></script>
 </body>
 </html>
