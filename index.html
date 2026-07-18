@@ -6,6 +6,7 @@
     <title>AI产品经理工作台</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar-layout.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/data.js"></script>
 </head>
@@ -54,14 +55,20 @@
 
         <!-- 旧的导航栏（删除） -->
 
-        <!-- 页面标题 -->
-        <header class="page-header">
-            <h1>AI产品经理工作台</h1>
-            <p class="subtitle">基于飞书AI的多维决策支持系统</p>
-        </header>
-
         <!-- ==================== 页面1：首页 ==================== -->
         <div class="page-content" id="page-home">
+            <!-- Hero区域 -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">AI产品经理工作台</h1>
+                    <p class="hero-subtitle">基于飞书AI的多维决策支持系统</p>
+                    <p class="hero-description">将决策周期从 4-6周 缩短到 1-2周，让数据与经验完美融合</p>
+                </div>
+                <div class="hero-image">
+                    <img src="images/hero-illustration.png" alt="AI产品经理工作台">
+                </div>
+            </section>
+
             <!-- 开场引导页 -->
             <section class="intro-section" id="introSection">
             <div class="intro-card">
@@ -154,7 +161,7 @@
                 <div class="workflow-steps-new">
                     <div class="workflow-step-card">
                         <div class="workflow-step-icon">
-                            <i class="fas fa-database"></i>
+                            <img src="images/icon-data-collection.png" alt="信息收集">
                         </div>
                         <div class="workflow-step-number">1</div>
                         <h3 class="workflow-step-title">信息收集与整合</h3>
@@ -166,7 +173,7 @@
 
                     <div class="workflow-step-card">
                         <div class="workflow-step-icon">
-                            <i class="fas fa-brain"></i>
+                            <img src="images/icon-ai-analysis.png" alt="AI分析">
                         </div>
                         <div class="workflow-step-number">2</div>
                         <h3 class="workflow-step-title">AI分析与量化评分</h3>
@@ -178,7 +185,7 @@
 
                     <div class="workflow-step-card">
                         <div class="workflow-step-icon">
-                            <i class="fas fa-handshake"></i>
+                            <img src="images/icon-collaboration.png" alt="人机协作">
                         </div>
                         <div class="workflow-step-number">3</div>
                         <h3 class="workflow-step-title">PM审视与品味集成</h3>
@@ -190,7 +197,7 @@
 
                     <div class="workflow-step-card">
                         <div class="workflow-step-icon">
-                            <i class="fas fa-clipboard-check"></i>
+                            <img src="images/icon-decision.png" alt="决策生成">
                         </div>
                         <div class="workflow-step-number">4</div>
                         <h3 class="workflow-step-title">决策与方案生成</h3>
