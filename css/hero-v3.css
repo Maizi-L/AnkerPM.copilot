@@ -1,0 +1,629 @@
+/* ===== 版本3：波浪流动背景（Linear风格 + 浅色）===== */
+
+/* Hero区域 - 波浪流动背景 */
+.hero-section-v2 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+    padding: 120px 40px 80px;
+}
+
+/* 波浪流动背景 */
+.hero-bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 多层波浪 */
+.hero-bg-gradient::before,
+.hero-bg-gradient::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+}
+
+.hero-bg-gradient::before {
+    background:
+        radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    animation: wave1 20s ease-in-out infinite;
+}
+
+.hero-bg-gradient::after {
+    background:
+        radial-gradient(circle at 60% 30%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 40% 70%, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
+    animation: wave2 15s ease-in-out infinite reverse;
+}
+
+@keyframes wave1 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5%, -5%) rotate(5deg);
+    }
+    50% {
+        transform: translate(-3%, 3%) rotate(-3deg);
+    }
+    75% {
+        transform: translate(-5%, -3%) rotate(3deg);
+    }
+}
+
+@keyframes wave2 {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(-4%, 4%) rotate(-4deg);
+    }
+    66% {
+        transform: translate(4%, -2%) rotate(4deg);
+    }
+}
+
+/* 细腻的网格线 */
+.hero-bg-gradient {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+/* 内容居中 */
+.hero-content-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* 大标题 - 流动渐变 */
+.hero-title-large {
+    font-size: 80px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 60px;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    background: linear-gradient(120deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleFadeIn 1s ease-out, gradientFlow 8s ease infinite;
+    position: relative;
+}
+
+@keyframes gradientFlow {
+    0%, 100% {
+        background-position: 0% center;
+    }
+    50% {
+        background-position: 100% center;
+    }
+}
+
+/* 标题光晕效果 */
+.hero-title-large::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: blur(20px);
+    opacity: 0.3;
+    z-index: -1;
+    animation: gradientFlow 8s ease infinite;
+}
+
+/* 标题下装饰线 - 流动效果 */
+.hero-title-large::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    border-radius: 2px;
+    animation: underlineFadeIn 1s ease-out 0.3s both, gradientFlow 6s ease infinite;
+}
+
+@keyframes underlineFadeIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 120px;
+        opacity: 1;
+    }
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 描述区块 */
+.hero-description-block {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: contentFadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 描述项 - 浅色玻璃卡片 + 波纹效果 */
+.hero-desc-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 40px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 卡片流动渐变装饰 */
+.hero-desc-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    animation: gradientFlow 6s ease infinite;
+}
+
+.hero-desc-item:hover::before {
+    transform: scaleX(1);
+}
+
+/* 波纹光晕效果 */
+.hero-desc-item::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.hero-desc-item:hover::after {
+    width: 400px;
+    height: 400px;
+}
+
+.hero-desc-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 107, 53, 0.2);
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 50px rgba(255, 107, 53, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* 标签 - 流动渐变 */
+.desc-label {
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding-left: 20px;
+    animation: gradientFlow 6s ease infinite;
+}
+
+.desc-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 100%);
+    background-size: 200% auto;
+    animation: gradientFlow 6s ease infinite;
+}
+
+/* 描述文字 */
+.desc-text {
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+/* ===== 主要功能模块样式 ===== */
+.features-section {
+    padding: 80px 40px;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.feature-card {
+    position: relative;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* 顶部流动渐变线 */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.08);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.feature-number {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #FF6B35 0%, #8B5CF6 100%);
+    background-size: 200% auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    animation: gradientFlow 6s ease infinite;
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    padding-right: 60px;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feature-label {
+    font-size: 13px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 8px;
+    animation: gradientFlow 6s ease infinite;
+}
+
+.feature-text {
+    font-size: 15px;
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+/* ===== 其他区域继承版本2样式 ===== */
+.intro-section {
+    background: #ffffff;
+}
+
+.pain-points {
+    gap: 20px;
+}
+
+.pain-point {
+    position: relative;
+    padding: 36px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.pain-point::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #FF6B35 0%, #8B5CF6 100%);
+    transition: height 0.4s ease;
+}
+
+.pain-point:hover::before {
+    height: 100%;
+}
+
+.pain-point:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.12);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.pain-content {
+    position: relative;
+}
+
+.pain-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.pain-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #FF6B35 0%, #8B5CF6 100%);
+    border-radius: 50%;
+}
+
+.pain-desc {
+    font-size: 15px;
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+.value-section {
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+}
+
+.value-card {
+    position: relative;
+    padding: 36px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.value-card:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.value-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #FF6B35 0%, #8B5CF6 50%, #3B82F6 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.value-desc {
+    font-size: 15px;
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+.benefits-section {
+    background: #ffffff;
+}
+
+.benefit-item {
+    position: relative;
+    padding: 36px;
+    background: rgba(248, 249, 250, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+}
+
+.benefit-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.benefit-item:hover::after {
+    opacity: 1;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 107, 53, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.08);
+}
+
+.benefit-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.benefit-desc {
+    font-size: 14px;
+    color: #6c757d;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+    .hero-title-large {
+        font-size: 48px;
+    }
+
+    .hero-desc-item {
+        padding: 24px 28px;
+    }
+
+    .desc-text {
+        font-size: 14px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}

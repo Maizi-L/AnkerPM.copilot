@@ -1,0 +1,311 @@
+/* ===== 版本1：动态渐变背景（Raycast风格）===== */
+
+/* Hero区域 - 全屏动态背景 */
+.hero-section-v2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+/* 动态渐变背景 */
+.hero-bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(255, 107, 53, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 60%);
+    animation: gradientMove 15s ease-in-out infinite;
+    filter: blur(80px);
+}
+
+@keyframes gradientMove {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(10%, -10%) scale(1.1);
+    }
+    50% {
+        transform: translate(-5%, 10%) scale(0.95);
+    }
+    75% {
+        transform: translate(-10%, -5%) scale(1.05);
+    }
+}
+
+/* 内容居中 */
+.hero-content-center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 40px;
+}
+
+/* 大标题 */
+.hero-title-large {
+    font-size: 72px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 48px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleFadeIn 1s ease-out;
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 描述区块 */
+.hero-description-block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    animation: contentFadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 描述项 */
+.hero-desc-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    text-align: left;
+}
+
+.hero-desc-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateY(-4px);
+}
+
+/* 标签 */
+.desc-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FF6B35;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* 描述文字 */
+.desc-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* ===== 痛点卡片优化（去掉emoji，纯文字高级感）===== */
+.pain-point {
+    position: relative;
+    padding: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pain-point::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: linear-gradient(180deg, #FF6B35 0%, #8B5CF6 100%);
+    transition: height 0.4s ease;
+}
+
+.pain-point:hover::before {
+    height: 100%;
+}
+
+.pain-point:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.12);
+    border-color: rgba(255, 107, 53, 0.2);
+}
+
+.pain-content {
+    position: relative;
+}
+
+.pain-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 16px;
+}
+
+.pain-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #FF6B35;
+    border-radius: 50%;
+}
+
+.pain-desc {
+    font-size: 15px;
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+/* ===== 核心价值卡片优化（去掉emoji）===== */
+.value-card {
+    position: relative;
+    padding: 32px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF6B35 0%, #8B5CF6 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.value-card:hover::before {
+    transform: scaleX(1);
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #FF6B35;
+}
+
+.value-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #FF6B35 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.value-desc {
+    font-size: 15px;
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+/* ===== 核心价值项优化（Raycast图二风格）===== */
+.benefit-item {
+    position: relative;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.benefit-item::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #FF6B35 0%, #8B5CF6 100%);
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.benefit-item:hover::after {
+    opacity: 0.1;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 107, 53, 0.3);
+    transform: translateY(-4px);
+}
+
+.benefit-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.benefit-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+}
+
+/* ===== 响应式优化 ===== */
+@media (max-width: 768px) {
+    .hero-title-large {
+        font-size: 42px;
+    }
+
+    .hero-desc-item {
+        padding: 20px 24px;
+    }
+
+    .desc-text {
+        font-size: 14px;
+    }
+}

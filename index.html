@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidebar-layout.css">
     <link rel="stylesheet" href="css/animations.css">
+    <!-- <link rel="stylesheet" href="css/hero-v1.css"> -->
+    <link rel="stylesheet" href="css/hero-v2.css">
+    <!-- <link rel="stylesheet" href="css/hero-v3.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/data.js"></script>
 </head>
@@ -19,7 +22,7 @@
             <aside class="sidebar">
                 <!-- Logo区域 -->
                 <div class="sidebar-logo">
-                    <span class="logo-text">AI产品经理</span>
+                    <span class="logo-text">AnkerPM.copilot</span>
                 </div>
 
                 <!-- 主导航 -->
@@ -58,14 +61,71 @@
         <!-- ==================== 页面1：首页 ==================== -->
         <div class="page-content" id="page-home">
             <!-- Hero区域 -->
-            <section class="hero-section">
-                <div class="hero-content">
-                    <h1 class="hero-title">AI产品经理工作台</h1>
-                    <p class="hero-subtitle">基于飞书AI的多维决策支持系统</p>
-                    <p class="hero-description">将决策周期从 4-6周 缩短到 1-2周，让数据与经验完美融合</p>
+            <!-- Hero区域 - 视频背景版本 -->
+            <section class="hero-section-v2">
+                <!-- 视频背景 -->
+                <video class="hero-bg-video" autoplay muted loop playsinline>
+                    <source src="images/hero-bg-video.mp4" type="video/mp4">
+                </video>
+
+                <!-- 遮罩层 -->
+                <div class="hero-video-overlay"></div>
+
+                <!-- 内容居中 -->
+                <div class="hero-content-center">
+                    <h1 class="hero-title-large">AnkerPM.copilot</h1>
+                    <p class="hero-subtitle-line">基于飞书生态的多 Agent 消费电子新品规划系统</p>
+                    <p class="hero-subtitle-line">串联「信息采集 → AI 分析 → PM 共创 → 方案生成」全流程</p>
                 </div>
-                <div class="hero-image">
-                    <img src="images/hero-illustration.png" alt="AI产品经理工作台">
+            </section>
+
+            <!-- 主要功能模块 -->
+            <section class="features-section">
+                <h2 class="section-heading">主要功能</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-number">1</div>
+                        <h3 class="feature-title">持续监测用户真实声音</h3>
+                        <div class="feature-content">
+                            <p class="feature-label">痛点</p>
+                            <p class="feature-text">用户/潜在用户需求信息碎片化，无法及时洞察潜在商机。</p>
+                            <p class="feature-label">解决方案</p>
+                            <p class="feature-text">抓社媒 / 电商 / 调研零散反馈，自动聚类主题、量化情绪、识别潜在需求。</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-number">2</div>
+                        <h3 class="feature-title">动态捕捉行业增量信号</h3>
+                        <div class="feature-content">
+                            <p class="feature-label">痛点</p>
+                            <p class="feature-text">市场变动频繁，风口与泡沫齐飞。</p>
+                            <p class="feature-label">解决方案</p>
+                            <p class="feature-text">监控资金流向、竞品动作、行业报告，定位"有需求、没产品"的空白带。</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-number">3</div>
+                        <h3 class="feature-title">五维评分体系</h3>
+                        <div class="feature-content">
+                            <p class="feature-label">痛点</p>
+                            <p class="feature-text">新品策划决策因素复杂，找"最优解"需多方掂旋。</p>
+                            <p class="feature-label">解决方案</p>
+                            <p class="feature-text">综合计算新品 Idea 的市场吸引力、用户需求、产品可行性、商业价值、风险等级。</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-number">4</div>
+                        <h3 class="feature-title">PM 全程有最高权重</h3>
+                        <div class="feature-content">
+                            <p class="feature-label">痛点</p>
+                            <p class="feature-text">纯 AI 工作流缺少人类产品经理的经验判断，方案可行性差。</p>
+                            <p class="feature-label">解决方案</p>
+                            <p class="feature-text">PM 可在任意环节介入，提交"直觉/经验"参数，随时为当前的方案纠偏。</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -76,7 +136,6 @@
 
                 <div class="pain-points">
                     <div class="pain-point">
-                        <div class="pain-icon">📊</div>
                         <div class="pain-content">
                             <h3 class="pain-title">信息分散在多个渠道</h3>
                             <p class="pain-desc">用户评论、行业报告、竞品动态...<br>手工整理耗时长，难以系统化</p>
@@ -84,7 +143,6 @@
                     </div>
 
                     <div class="pain-point">
-                        <div class="pain-icon">🎲</div>
                         <div class="pain-content">
                             <h3 class="pain-title">决策因素复杂，容易遗漏</h3>
                             <p class="pain-desc">市场、用户、技术、成本、风险...<br>如何权衡？经验 vs 数据？</p>
@@ -92,7 +150,6 @@
                     </div>
 
                     <div class="pain-point">
-                        <div class="pain-icon">🤝</div>
                         <div class="pain-content">
                             <h3 class="pain-title">AI分析结果难以融入PM经验</h3>
                             <p class="pain-desc">数据说一套，直觉说一套<br>如何实现真正的人机协作？</p>
@@ -106,22 +163,18 @@
                 <h2 class="section-heading">我们的解决方案</h2>
                 <div class="value-grid">
                     <div class="value-card">
-                        <div class="value-icon">🔗</div>
                         <h3 class="value-title">信息源协同</h3>
                         <p class="value-desc">自动采集和整合用户反馈、行业数据、竞品信息、成本数据、供应链信息等多维信息源，建立统一的信息库</p>
                     </div>
                     <div class="value-card">
-                        <div class="value-icon">📊</div>
                         <h3 class="value-title">量化决策框架</h3>
                         <p class="value-desc">将决策分解为五个维度（市场吸引力、用户需求强度、产品可行性、商业价值、风险等级），每个维度都有具体的量化指标</p>
                     </div>
                     <div class="value-card">
-                        <div class="value-icon">🤖</div>
                         <h3 class="value-title">AI驱动分析</h3>
                         <p class="value-desc">利用NLP、数据分析等AI技术，自动进行情感分析、关键词提取、主题聚类、评分计算等工作</p>
                     </div>
                     <div class="value-card">
-                        <div class="value-icon">🤝</div>
                         <h3 class="value-title">人机协作</h3>
                         <p class="value-desc">产品经理可以通过评论、权重调整、场景选择等方式将自己的品味和直觉集成到AI分析中</p>
                     </div>
@@ -133,22 +186,18 @@
                 <h2 class="section-heading">核心价值</h2>
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <div class="benefit-icon">🎯</div>
                         <h3 class="benefit-title">决策科学性</h3>
                         <p class="benefit-desc">基于多维数据的量化框架，减少主观偏差，提高决策的可重复性和可追踪性</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">⚡</div>
                         <h3 class="benefit-title">决策效率</h3>
                         <p class="benefit-desc">自动化的信息采集和分析，减少产品经理的重复性工作，大幅缩短决策周期</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">✨</div>
                         <h3 class="benefit-title">决策质量</h3>
                         <p class="benefit-desc">系统化的信息整合和风险评估，帮助发现遗漏的因素和潜在风险</p>
                     </div>
                     <div class="benefit-item">
-                        <div class="benefit-icon">📚</div>
                         <h3 class="benefit-title">组织学习</h3>
                         <p class="benefit-desc">积累历史决策数据，建立可持续优化的决策模型，形成组织的产品规划知识库</p>
                     </div>
