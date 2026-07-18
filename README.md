@@ -2,7 +2,7 @@
 
 > AI 原生新品规划决策系统（基于飞书生态） | 2026飞书AI先锋参赛项目
 
-[![在线演示](https://img.shields.io/badge/演示-Vercel-black?style=flat&logo=vercel)](你的vercel链接)
+[![在线演示](https://img.shields.io/badge/演示-Vercel-black?style=flat&logo=vercel)](https://anker-pm-copilot.vercel.app)
 [![Cloudflare Pages](https://img.shields.io/badge/国内访问-Cloudflare-orange?style=flat&logo=cloudflare)](https://ankerpm-copilot.pages.dev)
 [![GitHub](https://img.shields.io/badge/GitHub-AnkerPM.copilot-blue?style=flat&logo=github)](https://github.com/Maizi-L/AnkerPM.copilot)
 
@@ -57,23 +57,23 @@
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        前端交互层                                 │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐       │
-│  │ 项目管理 │  │ 信息采集 │  │ AI分析  │  │ 决策生成 │       │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘       │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐         │
+│  │ 项目管理   │  │ 信息采集 │   │ AI分析   │   │ 决策生成 │          │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘         │
 └─────────────────────────────────────────────────────────────────┘
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                        业务逻辑层                                 │
 │  ┌──────────────────┐  ┌──────────────────┐                    │
-│  │ 信息源协同模块   │  │ 五维评分引擎     │                    │
-│  │ - 数据采集       │  │ - 市场吸引力     │                    │
-│  │ - 数据清洗       │  │ - 用户需求强度   │                    │
-│  │ - 数据标准化     │  │ - 产品可行性     │                    │
-│  └──────────────────┘  │ - 商业价值       │                    │
-│                         │ - 风险等级       │                    │
+│  │ 信息源协同模块     │  │ 五维评分引擎       │                    │
+│  │ - 数据采集        │  │ - 市场吸引力       │                    │
+│  │ - 数据清洗        │  │ - 用户需求强度     │                    │
+│  │ - 数据标准化      │  │ - 产品可行性       │                    │
+│  └──────────────────┘  │ - 商业价值        │                    │
+│                        │ - 风险等级       │                     │
 │  ┌──────────────────┐  └──────────────────┘                    │
-│  │ 人机协作模块     │  ┌──────────────────┐                    │
-│  │ - PM直觉评分     │  │ 方案生成引擎     │                    │
+│  │ 人机协作模块     │  ┌──────────────────┐                     │
+│  │ - PM直觉评分     │  │ 方案生成引擎     │                     │
 │  │ - 场景选择       │  │ - 激进款         │                    │
 │  │ - 权重调整       │  │ - 大众款         │                    │
 │  └──────────────────┘  │ - 保守款         │                    │
@@ -83,10 +83,10 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                        AI能力层                                   │
 │  ┌──────────────────┐  ┌──────────────────┐                    │
-│  │ 飞书LLM         │  │ NLP分析引擎     │                    │
-│  │ - 文本生成       │  │ - 情感分析       │                    │
-│  │ - 摘要提取       │  │ - 关键词提取     │                    │
-│  │ - 问答对话       │  │ - 主题聚类       │                    │
+│  │ 飞书LLM          │  │ NLP分析引擎     │                    │
+│  │ - 文本生成        │  │ - 情感分析       │                    │
+│  │ - 摘要提取        │  │ - 关键词提取     │                    │
+│  │ - 问答对话        │  │ - 主题聚类       │                    │
 │  └──────────────────┘  └──────────────────┘                    │
 └─────────────────────────────────────────────────────────────────┘
                               ▼
@@ -132,155 +132,18 @@
 
 ### 飞书工具链集成
 
-**1. 飞书多维表格（数据存储）**
+| 功能模块 | 飞书工具 | 集成方式 | 主要用途 |
+|---------|---------|---------|---------|
+| 信息采集与管理 | 多维表格 + 自定义应用 | API 集成 | 存储和管理各类信息源数据 |
+| AI 分析与评分 | 飞书智能伙伴 (aily) + 自定义应用 | LLM API 调用 | 执行 NLP 分析、评分计算 |
+| 产品经理交互 | 飞书自定义应用 + 多维表格应用模式 | 前端开发 | 提供交互式仪表板 |
+| 方案生成 | 飞书文档 + 自定义应用 | 文档 API + 应用逻辑 | 自动生成方案文档 |
+| 团队协作 | 飞书文档、多维表格、即时通讯 | 原生集成 | 支持团队评审和反馈 |
+| 工作流管理 | 飞书自动化工作流 | 工作流编排 | 自动化流程执行 |
 
-**项目信息表**
-```javascript
-{
-  "table_id": "project_info",
-  "fields": [
-    {
-      "field_name": "项目ID",
-      "field_type": "text",
-      "primary_key": true
-    },
-    {
-      "field_name": "项目名称",
-      "field_type": "text"
-    },
-    {
-      "field_name": "产品类型",
-      "field_type": "single_select",
-      "options": ["智能硬件", "消费电子", "IoT设备"]
-    },
-    {
-      "field_name": "目标价格",
-      "field_type": "number"
-    },
-    {
-      "field_name": "决策场景",
-      "field_type": "single_select",
-      "options": ["快速迭代", "品质优先", "平衡发展"]
-    },
-    {
-      "field_name": "创建时间",
-      "field_type": "created_time"
-    },
-    {
-      "field_name": "负责人",
-      "field_type": "person"
-    }
-  ]
-}
-```
-
-**评分数据表**
-```javascript
-{
-  "table_id": "scoring_data",
-  "fields": [
-    {
-      "field_name": "项目ID",
-      "field_type": "text"
-    },
-    {
-      "field_name": "维度",
-      "field_type": "single_select",
-      "options": ["市场吸引力", "用户需求强度", "产品可行性", "商业价值", "风险等级"]
-    },
-    {
-      "field_name": "AI评分",
-      "field_type": "number"
-    },
-    {
-      "field_name": "PM评分",
-      "field_type": "number"
-    },
-    {
-      "field_name": "综合评分",
-      "field_type": "formula",
-      "formula": "AI评分 * 0.6 + PM评分 * 0.3"
-    },
-    {
-      "field_name": "评分依据",
-      "field_type": "text"
-    }
-  ]
-}
-```
-
-**2. 飞书文档（报告生成）**
-
-**决策报告模板**
-```markdown
-# {{项目名称}} - 新品规划决策报告
-
-## 项目概览
-- **项目ID**: {{项目ID}}
-- **产品类型**: {{产品类型}}
-- **目标价格**: {{目标价格}}
-- **决策场景**: {{决策场景}}
-- **负责人**: {{负责人}}
-- **创建时间**: {{创建时间}}
-
-## 五维评分总览
-
-| 维度 | AI评分 | PM评分 | 综合评分 | 权重 |
-|------|--------|--------|----------|------|
-| 市场吸引力 | {{ai_market}} | {{pm_market}} | {{final_market}} | 20% |
-| 用户需求强度 | {{ai_demand}} | {{pm_demand}} | {{final_demand}} | 25% |
-| 产品可行性 | {{ai_feasibility}} | {{pm_feasibility}} | {{final_feasibility}} | 20% |
-| 商业价值 | {{ai_business}} | {{pm_business}} | {{final_business}} | 25% |
-| 风险等级 | {{ai_risk}} | {{pm_risk}} | {{final_risk}} | 10% |
-
-**综合评分**: {{overall_score}} / 5.0
-
-## AI分析洞察
-
-### 用户需求分析
-{{user_insights}}
-
-### 市场趋势分析
-{{market_trends}}
-
-### 竞品对比分析
-{{competitor_analysis}}
-
-### 风险预警
-{{risk_alerts}}
-
-## 推荐方案
-
-### 方案一：激进款（{{aggressive_score}}分）
-{{aggressive_description}}
-
-### 方案二：大众款（{{mainstream_score}}分）【推荐】
-{{mainstream_description}}
-
-### 方案三：保守款（{{conservative_score}}分）
-{{conservative_description}}
-
-## 决策建议
-
-{{decision_recommendation}}
-
----
-*本报告由 AnkerPM.copilot 自动生成 | 生成时间: {{generated_time}}*
-```
-
----
+ ---
 
 ## 📊 工作流设计
-
-```mermaid
-graph LR
-    A[信息采集] --> B[AI分析]
-    B --> C[五维评分]
-    C --> D[PM审视]
-    D --> E[人机协作]
-    E --> F[方案生成]
-    F --> G[文档输出]
-```
 
 ### 完整工作流程
 
@@ -345,14 +208,5 @@ graph LR
 ## 🚀 快速体验
 
 ### 在线演示
-- 🌍 **国际访问**: [Vercel](你的vercel链接)
+- 🌍 **国际访问**: [Vercel](https://anker-pm-copilot.vercel.app)
 - 🇨🇳 **国内访问**: [Cloudflare Pages](https://ankerpm-copilot.pages.dev)
-
-### 本地运行
-```bash
-git clone https://github.com/Maizi-L/AnkerPM.copilot.git
-cd AnkerPM.copilot
-open index.html
-```
-
-无需安装依赖，直接在浏览器打开即可！
