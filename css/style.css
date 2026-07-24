@@ -620,3 +620,41 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* 工作流程部分 */
+.workflow-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.workflow-diagram {
+    background: var(--bg-light);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow);
+}
+
+.workflow-text {
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-dark);
+    background: white;
+    padding: 32px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary-color);
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.workflow-text::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .workflow-text {
+        font-size: 12px;
+        padding: 20px;
+    }
+}
