@@ -37,10 +37,61 @@ function switchPage(pageName) {
     });
 }
 
-// 快速操作按钮
-document.querySelectorAll('.action-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const pageName = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-        switchPage(pageName);
+// 折叠/展开卡片（信息看板）
+function toggleCard(element) {
+    const card = element.closest('.analysis-card');
+    const content = card.querySelector('.card-content');
+    const icon = element.querySelector('.toggle-icon');
+    
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '▼';
+        card.classList.remove('collapsed');
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '▶';
+        card.classList.add('collapsed');
+    }
+}
+
+// 折叠/展开维度（决策页面）
+function toggleDimension(element) {
+    const card = element.closest('.dimension-card');
+    const content = card.querySelector('.dimension-content');
+    const icon = element.querySelector('.toggle-icon');
+    
+    if (card.classList.contains('collapsed')) {
+        card.classList.remove('collapsed');
+        content.style.display = 'block';
+        icon.textContent = '▼';
+    } else {
+        card.classList.add('collapsed');
+        content.style.display = 'none';
+        icon.textContent = '▶';
+    }
+}
+
+// 权重滑块更新
+document.querySelectorAll('.weight-slider input[type="range"]').forEach(slider => {
+    slider.addEventListener('input', (e) => {
+        const valueDisplay = e.target.nextElementSibling;
+        valueDisplay.textContent = e.target.value + '%';
+    });
+});
+
+// 快速操作按钮点击事件
+document.addEventListener('DOMContentLoaded', () => {
+    // 为所有快速操作按钮添加事件监听
+    document.querySelectorAll('.action-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // 从onclick属性中提取页面名称
+            const onclickAttr = this.getAttribute('onclick');
+            if (onclickAttr) {
+                const match = onclickAttr.match(/switchPage\('([^']+)'\)/);
+                if (match) {
+                    switchPage(match[1]);
+                }
+            }
+        });
     });
 });

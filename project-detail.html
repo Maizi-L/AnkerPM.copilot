@@ -172,61 +172,1052 @@
                 </div>
             </div>
 
-            <!-- 其他页面（信息看板、深度情报等）-->
+            <!-- 信息看板页面 -->
             <div id="dashboard-page" class="page">
                 <div class="page-header">
                     <h1 class="page-title">信息看板</h1>
+                    <div class="page-actions">
+                        <button class="btn-icon-text" onclick="alert('刷新数据采集进度')">
+                            <span>🔄</span> 刷新
+                        </button>
+                    </div>
                 </div>
-                <div class="placeholder-content">
-                    <div class="placeholder-icon">🛰️</div>
-                    <h3>信息看板功能开发中</h3>
-                    <p>完整版将展示数据采集进度、AI初步分析和机会发现</p>
+
+                <!-- 数据采集进度 -->
+                <div class="section-title">📊 数据采集进度</div>
+                <div class="data-sources">
+                    <div class="source-card">
+                        <div class="source-icon">📱</div>
+                        <h4 class="source-name">社交媒体</h4>
+                        <div class="source-count">已采集 1,234 条</div>
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar-fill" style="width: 85%"></div>
+                        </div>
+                        <div class="source-status">进度 85%</div>
+                    </div>
+                    <div class="source-card">
+                        <div class="source-icon">🛒</div>
+                        <h4 class="source-name">电商平台</h4>
+                        <div class="source-count">已采集 856 条</div>
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar-fill" style="width: 92%"></div>
+                        </div>
+                        <div class="source-status">进度 92%</div>
+                    </div>
+                    <div class="source-card">
+                        <div class="source-icon">📊</div>
+                        <h4 class="source-name">行业报告</h4>
+                        <div class="source-count">已采集 12 份</div>
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar-fill" style="width: 100%"></div>
+                        </div>
+                        <div class="source-status completed">完成</div>
+                    </div>
+                </div>
+
+                <!-- AI 初步分析 -->
+                <div class="section-title">🔍 AI 初步分析</div>
+                
+                <div class="analysis-card collapsible">
+                    <div class="card-header-analysis" onclick="toggleCard(this)">
+                        <h4>📱 社交媒体分析</h4>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="analysis-meta">
+                            <span>采集来源：Twitter (482条)、Reddit (356条)、知乎 (396条)</span>
+                        </div>
+                        <div class="analysis-section">
+                            <h5>🔍 关键发现：</h5>
+                            <ul class="finding-list">
+                                <li>用户对"续航"的提及率增加 45%，成为主要关注点</li>
+                                <li>"快充"相关讨论热度 Top 3，需求强烈</li>
+                                <li>负面评价集中在"发热"问题（152条），需要重点解决</li>
+                                <li>"通话清晰度"抱怨显著增加，办公场景痛点明显</li>
+                            </ul>
+                        </div>
+                        <div class="analysis-section">
+                            <h5>💡 AI 建议：</h5>
+                            <p>建议在新品中强化续航和快充功能，同时重点优化通话降噪算法。发热问题可能影响用户体验，建议在设计阶段充分考虑散热方案。</p>
+                        </div>
+                        <div class="pm-comment-section">
+                            <h5>💬 PM 评论：</h5>
+                            <div class="comment-item">
+                                <div class="comment-author">@张三 PM</div>
+                                <div class="comment-text">续航确实是痛点，但我们的技术能做到多少小时？需要和技术团队确认。通话清晰度是我们的核心竞争力，必须做好。</div>
+                                <div class="comment-time">2小时前</div>
+                            </div>
+                            <div class="ai-fusion">
+                                <div class="fusion-badge">🤖 AI 融合分析</div>
+                                <p>根据供应链数据，目前可实现30小时续航（配合快充15分钟使用4小时）。技术团队的AI降噪算法已迭代到第三代，通话清晰度提升40%。建议将"30小时超长续航+AI通话降噪"作为主要卖点。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-card collapsible">
+                    <div class="card-header-analysis" onclick="toggleCard(this)">
+                        <h4>🛒 电商平台分析</h4>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="analysis-meta">
+                            <span>采集来源：京东 (458条)、天猫 (398条)</span>
+                        </div>
+                        <div class="analysis-section">
+                            <h5>🔍 关键发现：</h5>
+                            <ul class="finding-list">
+                                <li>价格敏感度分析：500-800元价格带最受欢迎（占比38%）</li>
+                                <li>高频好评词："佩戴舒适"（342次）、"音质清晰"（298次）</li>
+                                <li>高频差评词："连接不稳定"（156次）、"降噪效果差"（134次）</li>
+                            </ul>
+                        </div>
+                        <div class="analysis-section">
+                            <h5>💡 AI 建议：</h5>
+                            <p>定价建议在599-799元区间，重点宣传佩戴舒适性和音质。连接稳定性和降噪效果是竞品的普遍短板，可作为差异化突破点。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 综合洞察 -->
+                <div class="section-title">🎯 综合洞察</div>
+                <div class="insight-summary">
+                    <div class="insight-card">
+                        <h4>核心机会点</h4>
+                        <p>市场对"办公场景专用耳机"需求明确但供给不足。用户愿意为"超长续航+通话清晰+舒适佩戴"支付溢价。</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>关键风险</h4>
+                        <p>价格竞争激烈，需要在性价比和差异化之间找到平衡。技术实现难度较大，需要投入研发资源。</p>
+                    </div>
+                    <div class="insight-card">
+                        <h4>建议行动</h4>
+                        <p>立即启动技术预研，重点攻克AI降噪和续航优化。同时进行用户深度访谈，验证需求假设。</p>
+                    </div>
+                </div>
+
+                <!-- 机会发现 -->
+                <div class="section-title">💡 基于当前数据的机会发现</div>
+                <div class="opportunity-insight">
+                    <div class="opportunity-item">
+                        <div class="opp-icon">🎯</div>
+                        <div class="opp-content">
+                            <h5>机会1：强化"全天办公"场景定位</h5>
+                            <p>数据显示82%的用户有"长时间佩戴"需求，但现有产品续航普遍不足。建议将"30小时续航"作为核心卖点。</p>
+                        </div>
+                    </div>
+                    <div class="opportunity-item">
+                        <div class="opp-icon">🎯</div>
+                        <div class="opp-content">
+                            <h5>机会2：主打"AI通话降噪"技术</h5>
+                            <p>社交媒体上"通话不清"抱怨占比34%，远高于其他痛点。我们的第三代AI降噪算法可形成技术壁垒。</p>
+                        </div>
+                    </div>
+                    <div class="opportunity-item">
+                        <div class="opp-icon">🎯</div>
+                        <div class="opp-content">
+                            <h5>机会3：增加"透传模式"增强体验</h5>
+                            <p>办公场景需要频繁与同事沟通，智能透传模式可以提升用户体验，形成差异化竞争力。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 深度情报页面 -->
             <div id="insight-page" class="page">
                 <div class="page-header">
                     <h1 class="page-title">深度情报</h1>
                 </div>
-                <div class="placeholder-content">
-                    <div class="placeholder-icon">📊</div>
-                    <h3>深度情报功能开发中</h3>
-                    <p>完整版将展示VOC分析、技术资产盘点和竞品功能矩阵</p>
+
+                <!-- VOC 分析 -->
+                <div class="section-title">📢 用户痛点情报（VOC分析）</div>
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>痛点主题</th>
+                                <th>真实信号</th>
+                                <th>对产品的启示</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>通话不清晰</strong></td>
+                                <td>社交媒体482次提及，电商差评156条："开会时对方总说听不清"</td>
+                                <td>必须配备顶级AI通话降噪，这是核心卖点</td>
+                            </tr>
+                            <tr>
+                                <td><strong>续航焦虑</strong></td>
+                                <td>用户调研显示76%担心"一天用不完"，平均使用8.5小时/天</td>
+                                <td>至少30小时续航，配合快充技术</td>
+                            </tr>
+                            <tr>
+                                <td><strong>佩戴不适</strong></td>
+                                <td>长时间佩戴后耳朵疼痛（298条反馈），夏天闷热（187条）</td>
+                                <td>人体工学设计，透气材质，重量控制在5g以下</td>
+                            </tr>
+                            <tr>
+                                <td><strong>环境干扰</strong></td>
+                                <td>开放办公室噪音干扰（412次提及），需要频繁摘戴耳机</td>
+                                <td>智能透传模式，自动识别对话场景</td>
+                            </tr>
+                            <tr>
+                                <td><strong>多设备切换</strong></td>
+                                <td>需要在手机/电脑/平板间切换（356条需求）</td>
+                                <td>多设备智能连接，一键切换</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 技术资产盘点 -->
+                <div class="section-title">🔧 技术资产盘点</div>
+                <div class="asset-cards">
+                    <div class="asset-card">
+                        <div class="asset-icon">📜</div>
+                        <div class="asset-number">741</div>
+                        <div class="asset-label">音频专利</div>
+                        <div class="asset-desc">涵盖降噪、编解码、声学结构等领域</div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-icon">🎧</div>
+                        <div class="asset-number">15+</div>
+                        <div class="asset-label">成熟产品线</div>
+                        <div class="asset-desc">Soundcore 系列累计销量超500万台</div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-icon">🤖</div>
+                        <div class="asset-number">3代</div>
+                        <div class="asset-label">AI 降噪算法</div>
+                        <div class="asset-desc">HearID + AI通话降噪，业界领先</div>
+                    </div>
+                    <div class="asset-card">
+                        <div class="asset-icon">🏭</div>
+                        <div class="asset-number">Top 5</div>
+                        <div class="asset-label">供应链优势</div>
+                        <div class="asset-desc">成本控制能力强，交付周期短</div>
+                    </div>
+                </div>
+
+                <!-- 竞品功能矩阵 -->
+                <div class="section-title">🏆 竞品功能矩阵</div>
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>能力维度</th>
+                                <th>我们的产品</th>
+                                <th>Sony WF-1000XM5</th>
+                                <th>AirPods Pro 2</th>
+                                <th>Bose QC Earbuds II</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AI 通话降噪</strong></td>
+                                <td><span class="badge-strong">✓ 第三代算法</span></td>
+                                <td><span class="badge-medium">○ 一般</span></td>
+                                <td><span class="badge-medium">○ 一般</span></td>
+                                <td><span class="badge-weak">✗ 较弱</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>续航时间</strong></td>
+                                <td><span class="badge-strong">✓ 30小时</span></td>
+                                <td><span class="badge-medium">○ 24小时</span></td>
+                                <td><span class="badge-weak">✗ 6小时</span></td>
+                                <td><span class="badge-weak">✗ 6小时</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>智能透传</strong></td>
+                                <td><span class="badge-strong">✓ AI自动识别</span></td>
+                                <td><span class="badge-medium">○ 手动切换</span></td>
+                                <td><span class="badge-medium">○ 手动切换</span></td>
+                                <td><span class="badge-weak">✗ 无</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>佩戴舒适度</strong></td>
+                                <td><span class="badge-medium">○ 5g 轻量化</span></td>
+                                <td><span class="badge-strong">✓ 5.9g</span></td>
+                                <td><span class="badge-strong">✓ 5.3g</span></td>
+                                <td><span class="badge-weak">✗ 6.2g</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>价格定位</strong></td>
+                                <td><span class="badge-strong">✓ 599-799元</span></td>
+                                <td><span class="badge-weak">✗ 2299元</span></td>
+                                <td><span class="badge-weak">✗ 1899元</span></td>
+                                <td><span class="badge-weak">✗ 2499元</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>多设备连接</strong></td>
+                                <td><span class="badge-strong">✓ 智能切换</span></td>
+                                <td><span class="badge-medium">○ 支持</span></td>
+                                <td><span class="badge-strong">✓ 无缝切换</span></td>
+                                <td><span class="badge-weak">✗ 不支持</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 竞争优势总结 -->
+                <div class="section-title">💎 竞争优势总结</div>
+                <div class="advantage-summary">
+                    <div class="advantage-item">
+                        <div class="adv-badge strong">核心优势</div>
+                        <h5>AI 通话降噪 + 超长续航</h5>
+                        <p>第三代AI降噪算法业界领先，30小时续航远超竞品。这是我们的核心技术壁垒。</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="adv-badge medium">次要优势</div>
+                        <h5>性价比 + 智能透传</h5>
+                        <p>599-799元价格带具有极强竞争力，智能透传模式提升办公场景体验。</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="adv-badge weak">待提升</div>
+                        <h5>佩戴舒适度</h5>
+                        <p>需要在工业设计和材质上进一步优化，达到行业顶尖水平。</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- 人机共创页面 -->
             <div id="cocreation-page" class="page">
                 <div class="page-header">
                     <h1 class="page-title">人机共创</h1>
                 </div>
-                <div class="placeholder-content">
-                    <div class="placeholder-icon">🤝</div>
-                    <h3>人机共创功能开发中</h3>
-                    <p>完整版将提供需求澄清、红队压测、用户替身访谈和专家评审</p>
+
+                <!-- 进度指示 -->
+                <div class="cocreation-progress">
+                    <div class="stage-item completed">
+                        <div class="stage-number">✓</div>
+                        <div class="stage-name">需求澄清</div>
+                    </div>
+                    <div class="stage-arrow">→</div>
+                    <div class="stage-item completed">
+                        <div class="stage-number">✓</div>
+                        <div class="stage-name">红队压测</div>
+                    </div>
+                    <div class="stage-arrow">→</div>
+                    <div class="stage-item active">
+                        <div class="stage-number">3</div>
+                        <div class="stage-name">用户替身访谈</div>
+                    </div>
+                    <div class="stage-arrow">→</div>
+                    <div class="stage-item">
+                        <div class="stage-number">4</div>
+                        <div class="stage-name">专家评审</div>
+                    </div>
+                </div>
+
+                <!-- 阶段一：需求澄清（已完成） -->
+                <div class="section-title">🤝 阶段一：需求澄清（已完成）</div>
+                <div class="dialogue-card completed-stage">
+                    <div class="dialogue-item ai">
+                        <div class="dialogue-avatar">🤖</div>
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">共创 Agent</div>
+                            <div class="dialogue-text">在压测之前，我先帮你把需求说清楚。这款耳机最想服务的那一类人是谁？他们在什么场景下最痛？</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-item user">
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">你（PM）</div>
+                            <div class="dialogue-text">核心是开放式工位的知识工作者，一天戴8小时。最痛的场景是开会/打电话时对方听不清我，以及戴着耳机同事叫我听不见。</div>
+                        </div>
+                        <div class="dialogue-avatar">👤</div>
+                    </div>
+                    <div class="dialogue-item ai">
+                        <div class="dialogue-avatar">🤖</div>
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">共创 Agent</div>
+                            <div class="dialogue-text">明白。那对这款产品来说，什么算"成功"？你希望用户用一句话怎么描述它？</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-item user">
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">你（PM）</div>
+                            <div class="dialogue-text">"终于有一款能戴一整天开会的耳机了"——成功的标志是用户愿意从早戴到晚，不会因为通话、续航、舒适度而中途摘下来。</div>
+                        </div>
+                        <div class="dialogue-avatar">👤</div>
+                    </div>
+                </div>
+
+                <!-- 阶段二：红队压测（已完成） -->
+                <div class="section-title">🤺 阶段二：红队压测（已完成）</div>
+                <div class="dialogue-card completed-stage">
+                    <div class="dialogue-item ai challenge">
+                        <div class="dialogue-avatar">⚔️</div>
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">挑战官</div>
+                            <div class="dialogue-text">市场上已经有 AirPods Pro、Sony WF-1000XM5 这些强势产品。你凭什么认为用户会选择你？请证明你的非对称价值。</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-item user">
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">你（PM）</div>
+                            <div class="dialogue-text">差异在场景重构：他们是"通用耳机"，我们是"办公场景专用"。30小时续航 + AI通话降噪 + 智能透传，这个组合他们都没有。而且我们的价格只有他们的1/3。</div>
+                        </div>
+                        <div class="dialogue-avatar">👤</div>
+                    </div>
+                    <div class="dialogue-item ai challenge">
+                        <div class="dialogue-avatar">⚔️</div>
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">挑战官</div>
+                            <div class="dialogue-text">技术壁垒呢？如果你成功了，竞品6个月内就能复制。你的护城河是什么？</div>
+                        </div>
+                    </div>
+                    <div class="dialogue-item user">
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">你（PM）</div>
+                            <div class="dialogue-text">我们有741项音频专利，第三代AI降噪算法是3年研发积累。供应链优势让我们能在保持低价的同时做到30小时续航。这些不是6个月能复制的。</div>
+                        </div>
+                        <div class="dialogue-avatar">👤</div>
+                    </div>
+                </div>
+
+                <!-- 阶段三：用户替身访谈（进行中） -->
+                <div class="section-title">🎭 阶段三：用户替身访谈（进行中）</div>
+                <div class="persona-selection">
+                    <div class="persona-card active">
+                        <div class="persona-avatar">💼</div>
+                        <div class="persona-name">小林</div>
+                        <div class="persona-tag">开放办公族</div>
+                        <div class="persona-desc">28岁产品经理，每天8-10小时在开放办公室，频繁参加线上会议</div>
+                        <button class="persona-btn selected">当前访谈</button>
+                    </div>
+                    <div class="persona-card">
+                        <div class="persona-avatar">🌐</div>
+                        <div class="persona-name">Anna</div>
+                        <div class="persona-tag">跨国商务</div>
+                        <div class="persona-desc">35岁销售总监，经常跨时区会议，需要实时翻译功能</div>
+                        <button class="persona-btn" onclick="alert('切换到 Anna 进行访谈')">切换访谈</button>
+                    </div>
+                    <div class="persona-card">
+                        <div class="persona-avatar">🚇</div>
+                        <div class="persona-name">阿杰</div>
+                        <div class="persona-tag">通勤学生</div>
+                        <div class="persona-desc">22岁大学生，每天地铁通勤2小时，看重性价比</div>
+                        <button class="persona-btn" onclick="alert('切换到阿杰进行访谈')">切换访谈</button>
+                    </div>
+                </div>
+
+                <div class="dialogue-card">
+                    <div class="dialogue-item ai persona">
+                        <div class="dialogue-avatar">💼</div>
+                        <div class="dialogue-content">
+                            <div class="dialogue-author">小林（用户替身）</div>
+                            <div class="dialogue-text">听起来不错，但我最担心的是：又是一款"号称能戴一整天"的耳机。我试过太多了，最后都是中午就没电或者耳朵疼。你们凭什么不一样？</div>
+                        </div>
+                    </div>
+                    <div class="interview-response">
+                        <div class="response-options">
+                            <div class="response-option">
+                                <div class="option-label">回应方向A：</div>
+                                <div class="option-text">强调技术参数（30小时续航，5g轻量化设计）</div>
+                            </div>
+                            <div class="response-option">
+                                <div class="option-label">回应方向B：</div>
+                                <div class="option-text">承认问题并说明我们如何解决（用户测试数据，迭代过程）</div>
+                            </div>
+                            <div class="response-option">
+                                <div class="option-label">回应方向C：</div>
+                                <div class="option-text">反问了解更多（你之前用的是哪些产品？具体哪里让你不满意？）</div>
+                            </div>
+                        </div>
+                        <p class="response-tip">💡 这是一个关键时刻：选择不同的回应方向会影响用户替身的后续反馈。在完整版中，你可以输入自己的回应。</p>
+                    </div>
+                </div>
+
+                <!-- 阶段四：专家评审（待开始） -->
+                <div class="section-title">🎓 阶段四：专家评审（待开始）</div>
+                <div class="expert-preview">
+                    <div class="expert-card">
+                        <div class="expert-avatar">🔊</div>
+                        <div class="expert-info">
+                            <div class="expert-name">声学/算法专家</div>
+                            <div class="expert-desc">评估 AI 降噪算法的技术可行性和竞争力</div>
+                        </div>
+                        <div class="expert-status pending">等待用户替身访谈完成</div>
+                    </div>
+                    <div class="expert-card">
+                        <div class="expert-avatar">👤</div>
+                        <div class="expert-info">
+                            <div class="expert-name">人因工程专家</div>
+                            <div class="expert-desc">评估长时间佩戴的舒适性和健康风险</div>
+                        </div>
+                        <div class="expert-status pending">等待用户替身访谈完成</div>
+                    </div>
+                    <div class="expert-card">
+                        <div class="expert-avatar">🏭</div>
+                        <div class="expert-info">
+                            <div class="expert-name">供应链专家</div>
+                            <div class="expert-desc">评估量产可行性和成本控制能力</div>
+                        </div>
+                        <div class="expert-status pending">等待用户替身访谈完成</div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 人机协作量化决策页面 -->
             <div id="decision-page" class="page">
                 <div class="page-header">
                     <h1 class="page-title">人机协作量化决策</h1>
+                    <button class="btn-primary" onclick="alert('生成方案')">生成方案</button>
                 </div>
-                <div class="placeholder-content">
-                    <div class="placeholder-icon">🎯</div>
-                    <h3>量化决策功能开发中</h3>
-                    <p>完整版将提供五维评分、权重调整和融合分析</p>
+
+                <div class="decision-intro">
+                    <p>基于前面的信息看板、深度情报和人机共创，AI 对该产品 Idea 进行五维评分。你可以调整权重、修改分数、添加评论，AI 会结合你的判断给出融合分析。</p>
+                </div>
+
+                <!-- 维度1：市场吸引力 -->
+                <div class="dimension-card">
+                    <div class="dimension-header" onclick="toggleDimension(this)">
+                        <div class="dimension-left">
+                            <h3>📊 市场吸引力</h3>
+                            <div class="dimension-scores">
+                                <span class="ai-score">AI: 78分</span>
+                                <span class="pm-score">你的判断: <input type="number" class="score-input" value="75" min="0" max="100"></span>
+                            </div>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="dimension-content">
+                        <div class="scoring-basis">
+                            <h4>AI 评分依据：</h4>
+                            <ul class="basis-list">
+                                <li>市场规模：45亿元 TAM（权重 20%）→ 得分 15.6</li>
+                                <li>市场增长率：35% CAGR（权重 15%）→ 得分 11.7</li>
+                                <li>竞争强度：8家主要竞品，HHI指数中等（权重 15%）→ 得分 11.7</li>
+                                <li>进入壁垒：技术专利741项，品牌已有基础（权重 10%）→ 得分 7.8</li>
+                            </ul>
+                            <div class="total-score">综合得分：78/100</div>
+                        </div>
+
+                        <div class="weight-adjustment">
+                            <h4>🎚️ 调整权重：</h4>
+                            <div class="weight-slider">
+                                <label>市场规模</label>
+                                <input type="range" min="0" max="50" value="20">
+                                <span class="weight-value">20%</span>
+                            </div>
+                            <div class="weight-slider">
+                                <label>市场增长率</label>
+                                <input type="range" min="0" max="50" value="15">
+                                <span class="weight-value">15%</span>
+                            </div>
+                            <div class="weight-slider">
+                                <label>竞争强度</label>
+                                <input type="range" min="0" max="50" value="15">
+                                <span class="weight-value">15%</span>
+                            </div>
+                            <div class="weight-slider">
+                                <label>进入壁垒</label>
+                                <input type="range" min="0" max="50" value="10">
+                                <span class="weight-value">10%</span>
+                            </div>
+                            <button class="btn-secondary-small" onclick="alert('应用权重调整')">应用调整</button>
+                        </div>
+
+                        <div class="pm-comment">
+                            <h4>💬 你的评论：</h4>
+                            <textarea class="comment-input" placeholder="输入你的经验判断和调整理由...">虽然竞争对手有8家，但他们都没有专门针对办公场景。我认为这是一个细分市场机会，AI 可能低估了我们的差异化优势。</textarea>
+                            <button class="btn-primary-small" onclick="alert('提交评论')">提交</button>
+                        </div>
+
+                        <div class="fusion-analysis">
+                            <div class="fusion-badge">🤖 融合分析（结合你的判断）</div>
+                            <div class="fusion-content">
+                                <div class="adjusted-score">修正后得分：<strong>75/100</strong></div>
+                                <p><strong>调整理由：</strong>根据 PM 的行业经验，办公场景细分市场确实被现有竞品忽视。但考虑到市场教育成本和品牌认知建立需要时间，适度下调至75分更为谨慎。建议：初期通过性价比快速占领市场，建立口碑后再提升品牌溢价。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 维度2：用户需求强度 -->
+                <div class="dimension-card collapsed">
+                    <div class="dimension-header" onclick="toggleDimension(this)">
+                        <div class="dimension-left">
+                            <h3>👥 用户需求强度</h3>
+                            <div class="dimension-scores">
+                                <span class="ai-score">AI: 82分</span>
+                                <span class="pm-score">你的判断: <input type="number" class="score-input" value="85" min="0" max="100"></span>
+                            </div>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="dimension-content" style="display: none;">
+                        <div class="scoring-basis">
+                            <h4>AI 评分依据：</h4>
+                            <ul class="basis-list">
+                                <li>痛点明确度：社交媒体482次"通话不清"抱怨（权重 25%）→ 得分 20.5</li>
+                                <li>需求频次：目标用户每天使用8.5小时（权重 20%）→ 得分 16.4</li>
+                                <li>支付意愿：76%愿意为解决方案支付溢价（权重 20%）→ 得分 16.4</li>
+                                <li>目标人群规模：估计500万潜在用户（权重 15%）→ 得分 12.3</li>
+                            </ul>
+                            <div class="total-score">综合得分：82/100</div>
+                        </div>
+                        <p class="quick-note">💡 这个维度得分较高，说明用户痛点真实且强烈。</p>
+                    </div>
+                </div>
+
+                <!-- 维度3：产品可行性 -->
+                <div class="dimension-card collapsed">
+                    <div class="dimension-header" onclick="toggleDimension(this)">
+                        <div class="dimension-left">
+                            <h3>🔧 产品可行性</h3>
+                            <div class="dimension-scores">
+                                <span class="ai-score">AI: 72分</span>
+                                <span class="pm-score">你的判断: <input type="number" class="score-input" value="70" min="0" max="100"></span>
+                            </div>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="dimension-content" style="display: none;">
+                        <div class="scoring-basis">
+                            <h4>AI 评分依据：</h4>
+                            <ul class="basis-list">
+                                <li>技术成熟度：AI降噪第三代，已验证（权重 30%）→ 得分 21.6</li>
+                                <li>供应链就绪：现有供应商可支持（权重 25%）→ 得分 18.0</li>
+                                <li>开发周期：预计6-8个月（权重 20%）→ 得分 14.4</li>
+                                <li>团队能力：有成熟音频产品线经验（权重 15%）→ 得分 10.8</li>
+                            </ul>
+                            <div class="total-score">综合得分：72/100</div>
+                        </div>
+                        <p class="quick-note">⚠️ 需要关注30小时续航的技术实现难度。</p>
+                    </div>
+                </div>
+
+                <!-- 维度4：商业价值 -->
+                <div class="dimension-card collapsed">
+                    <div class="dimension-header" onclick="toggleDimension(this)">
+                        <div class="dimension-left">
+                            <h3>💰 商业价值</h3>
+                            <div class="dimension-scores">
+                                <span class="ai-score">AI: 68分</span>
+                                <span class="pm-score">你的判断: <input type="number" class="score-input" value="68" min="0" max="100"></span>
+                            </div>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="dimension-content" style="display: none;">
+                        <div class="scoring-basis">
+                            <h4>AI 评分依据：</h4>
+                            <ul class="basis-list">
+                                <li>毛利率：预计35-40%（权重 25%）→ 得分 17.0</li>
+                                <li>市占率预期：首年2-3%（权重 20%）→ 得分 13.6</li>
+                                <li>品牌协同：与Soundcore现有产品线协同（权重 20%）→ 得分 13.6</li>
+                                <li>ROI：预计18个月回本（权重 15%）→ 得分 10.2</li>
+                            </ul>
+                            <div class="total-score">综合得分：68/100</div>
+                        </div>
+                        <p class="quick-note">💡 商业价值中等，需要控制好研发成本。</p>
+                    </div>
+                </div>
+
+                <!-- 维度5：风险等级 -->
+                <div class="dimension-card collapsed">
+                    <div class="dimension-header" onclick="toggleDimension(this)">
+                        <div class="dimension-left">
+                            <h3>⚠️ 风险等级</h3>
+                            <div class="dimension-scores">
+                                <span class="ai-score">AI: 35分（风险较低）</span>
+                                <span class="pm-score">你的判断: <input type="number" class="score-input" value="40" min="0" max="100"></span>
+                            </div>
+                        </div>
+                        <span class="toggle-icon">▼</span>
+                    </div>
+                    <div class="dimension-content" style="display: none;">
+                        <div class="scoring-basis">
+                            <h4>AI 评分依据（分数越低风险越小）：</h4>
+                            <ul class="basis-list">
+                                <li>技术风险：算法已验证，但续航优化有挑战（权重 30%）→ 风险 10.5</li>
+                                <li>市场风险：细分市场新进入，接受度不确定（权重 25%）→ 风险 8.8</li>
+                                <li>竞争风险：巨头可能快速跟进（权重 20%）→ 风险 7.0</li>
+                                <li>供应链风险：依赖少数供应商（权重 15%）→ 风险 5.3</li>
+                            </ul>
+                            <div class="total-score">综合风险：35/100（较低）</div>
+                        </div>
+                        <p class="quick-note">⚠️ 主要风险在于市场接受度和巨头竞争。</p>
+                    </div>
+                </div>
+
+                <!-- 综合决策建议 -->
+                <div class="final-decision">
+                    <h3 class="section-title">🎯 综合决策建议</h3>
+                    <div class="decision-summary">
+                        <div class="summary-scores">
+                            <div class="score-item">
+                                <div class="score-label">市场吸引力</div>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 75%"></div>
+                                </div>
+                                <div class="score-number">75</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-label">用户需求强度</div>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 85%"></div>
+                                </div>
+                                <div class="score-number">85</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-label">产品可行性</div>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 70%"></div>
+                                </div>
+                                <div class="score-number">70</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-label">商业价值</div>
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 68%"></div>
+                                </div>
+                                <div class="score-number">68</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-label">风险等级</div>
+                                <div class="score-bar risk">
+                                    <div class="score-fill" style="width: 40%"></div>
+                                </div>
+                                <div class="score-number">40（较低）</div>
+                            </div>
+                        </div>
+
+                        <div class="final-score">
+                            <div class="final-number">3.48</div>
+                            <div class="final-label">综合评分（满分5分）</div>
+                            <div class="final-recommendation recommend">有条件推荐</div>
+                        </div>
+
+                        <div class="recommendation-detail">
+                            <h4>决策建议：</h4>
+                            <p><strong>结论：</strong>建议立项，但需要在技术预研和市场测试上投入足够资源。</p>
+                            <p><strong>理由：</strong></p>
+                            <ul>
+                                <li>用户需求真实且强烈（85分），这是核心支撑</li>
+                                <li>市场吸引力较好（75分），细分市场机会明确</li>
+                                <li>技术可行性中等（70分），需要重点攻克续航优化</li>
+                                <li>商业价值可接受（68分），ROI在合理范围内</li>
+                                <li>风险可控（40分），主要风险可通过MVP验证降低</li>
+                            </ul>
+                            <p><strong>建议行动：</strong></p>
+                            <ol>
+                                <li>启动技术预研，重点验证30小时续航方案</li>
+                                <li>小规模用户测试，验证"办公场景专用"定位</li>
+                                <li>准备最小化MVP，快速进入市场测试</li>
+                                <li>监控竞品动态，防止巨头快速跟进</li>
+                            </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <!-- 方案对比页面 -->
             <div id="proposal-page" class="page">
                 <div class="page-header">
                     <h1 class="page-title">方案对比</h1>
+                    <button class="btn-primary" onclick="alert('导出文档')">导出文档</button>
                 </div>
-                <div class="placeholder-content">
-                    <div class="placeholder-icon">📐</div>
-                    <h3>方案对比功能开发中</h3>
-                    <p>完整版将生成三套方案并提供对比分析和文档输出</p>
+
+                <!-- 规划部分 -->
+                <div class="section-title">📐 产品属性规划</div>
+                <div class="planning-cards">
+                    <div class="planning-card">
+                        <div class="planning-header must">
+                            <h4>Must 基础属性</h4>
+                            <p>用户认为"必须有"的功能，缺一不可</p>
+                        </div>
+                        <ul class="planning-list">
+                            <li>✓ AI 通话降噪（核心卖点）</li>
+                            <li>✓ 30小时超长续航</li>
+                            <li>✓ 快充功能（15分钟用4小时）</li>
+                            <li>✓ 蓝牙稳定连接</li>
+                            <li>✓ 舒适佩戴（5g轻量化）</li>
+                            <li>✓ 多设备切换</li>
+                        </ul>
+                    </div>
+                    <div class="planning-card">
+                        <div class="planning-header performance">
+                            <h4>Performance 期望属性</h4>
+                            <p>越好越受欢迎，可量化提升体验</p>
+                        </div>
+                        <ul class="planning-list">
+                            <li>○ 音质表现（LDAC/aptX支持）</li>
+                            <li>○ ANC降噪深度</li>
+                            <li>○ 防水等级（IPX5）</li>
+                            <li>○ 操控便利性（触控/语音）</li>
+                            <li>○ APP功能丰富度</li>
+                        </ul>
+                    </div>
+                    <div class="planning-card">
+                        <div class="planning-header delight">
+                            <h4>Delight 魅力属性</h4>
+                            <p>意想不到的惊喜，形成差异化</p>
+                        </div>
+                        <ul class="planning-list">
+                            <li>★ 智能透传模式（AI自动识别对话）</li>
+                            <li>★ 实时翻译功能</li>
+                            <li>★ 健康监测（久坐提醒）</li>
+                            <li>★ 个性化音效（HearID）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 三套方案对比 -->
+                <div class="section-title">🎯 三套方案对比</div>
+                <div class="comparison-wrapper">
+                    <table class="proposal-table">
+                        <thead>
+                            <tr>
+                                <th>维度</th>
+                                <th class="highlight">方案A：高端定位<br/><span class="subtitle">Premium</span></th>
+                                <th>方案B：大众定位<br/><span class="subtitle">Mainstream</span></th>
+                                <th>方案C：性价比定位<br/><span class="subtitle">Value</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>目标用户</strong></td>
+                                <td>高端商务人士，愿意为品质付费</td>
+                                <td>普通白领，追求性价比平衡</td>
+                                <td>学生/入门用户，价格敏感</td>
+                            </tr>
+                            <tr>
+                                <td><strong>价格</strong></td>
+                                <td class="highlight">¥999</td>
+                                <td>¥699</td>
+                                <td>¥499</td>
+                            </tr>
+                            <tr>
+                                <td><strong>核心功能</strong></td>
+                                <td>AI降噪+30h续航+智能透传+实时翻译</td>
+                                <td>AI降噪+30h续航+智能透传</td>
+                                <td>基础降噪+24h续航</td>
+                            </tr>
+                            <tr>
+                                <td><strong>音质</strong></td>
+                                <td>LDAC + aptX Adaptive 高品质</td>
+                                <td>AAC 标准音质</td>
+                                <td>SBC 基础音质</td>
+                            </tr>
+                            <tr>
+                                <td><strong>材质工艺</strong></td>
+                                <td>金属+陶瓷，精工打磨</td>
+                                <td>塑料+金属，标准工艺</td>
+                                <td>塑料，简化工艺</td>
+                            </tr>
+                            <tr>
+                                <td><strong>BOM成本</strong></td>
+                                <td>¥480</td>
+                                <td>¥320</td>
+                                <td>¥220</td>
+                            </tr>
+                            <tr>
+                                <td><strong>毛利率</strong></td>
+                                <td class="highlight">52%</td>
+                                <td>54%</td>
+                                <td>56%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>预计市占率</strong></td>
+                                <td>首年 0.8%（高端市场）</td>
+                                <td class="highlight">首年 2.5%（主流市场）</td>
+                                <td>首年 1.2%（入门市场）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>开发周期</strong></td>
+                                <td>9-12个月（技术复杂）</td>
+                                <td>6-8个月（标准周期）</td>
+                                <td>4-6个月（快速上市）</td>
+                            </tr>
+                            <tr>
+                                <td><strong>风险评估</strong></td>
+                                <td>⚠️ 中高：技术难度大，市场接受度待验证</td>
+                                <td class="highlight">✓ 低：技术成熟，市场需求明确</td>
+                                <td>⚠️ 中：价格战激烈，利润空间有限</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 优劣分析 -->
+                <div class="section-title">📊 优劣势分析</div>
+                <div class="pros-cons">
+                    <div class="pros-cons-card">
+                        <h4 class="card-label">方案A：高端定位</h4>
+                        <div class="pros">
+                            <h5>✓ 优势</h5>
+                            <ul>
+                                <li>毛利率高，利润空间大</li>
+                                <li>技术领先，品牌形象提升</li>
+                                <li>功能完整，用户体验最佳</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>✗ 劣势</h5>
+                            <ul>
+                                <li>开发周期长，风险较大</li>
+                                <li>价格高，目标用户群小</li>
+                                <li>市场教育成本高</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons-card recommended">
+                        <div class="recommend-badge">推荐方案</div>
+                        <h4 class="card-label">方案B：大众定位</h4>
+                        <div class="pros">
+                            <h5>✓ 优势</h5>
+                            <ul>
+                                <li>价格合理，目标市场最大</li>
+                                <li>功能均衡，满足核心需求</li>
+                                <li>开发周期适中，风险可控</li>
+                                <li>市占率预期最高</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>✗ 劣势</h5>
+                            <ul>
+                                <li>竞争激烈，需要营销投入</li>
+                                <li>缺少"wow"因素，差异化不足</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pros-cons-card">
+                        <h4 class="card-label">方案C：性价比定位</h4>
+                        <div class="pros">
+                            <h5>✓ 优势</h5>
+                            <ul>
+                                <li>价格最低，快速占领市场</li>
+                                <li>开发周期短，快速上市</li>
+                                <li>毛利率最高</li>
+                            </ul>
+                        </div>
+                        <div class="cons">
+                            <h5>✗ 劣势</h5>
+                            <ul>
+                                <li>价格战激烈，利润绝对值低</li>
+                                <li>功能简化，用户体验打折扣</li>
+                                <li>品牌形象受损</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 推荐方案 -->
+                <div class="final-recommendation">
+                    <h3 class="section-title">💡 推荐方案：方案B（大众定位）</h3>
+                    <div class="recommendation-content">
+                        <div class="recommendation-reasons">
+                            <h4>推荐理由：</h4>
+                            <ol>
+                                <li><strong>市场规模最大：</strong>主流市场（500-800元价格带）占整体市场的45%，是最大的细分市场。</li>
+                                <li><strong>需求匹配度高：</strong>AI降噪+30h续航+智能透传满足办公场景核心需求，性价比突出。</li>
+                                <li><strong>风险可控：</strong>技术成熟度高，开发周期6-8个月，风险评级"低"。</li>
+                                <li><strong>市占率预期最高：</strong>首年预期市占率2.5%，营收潜力最大。</li>
+                                <li><strong>迭代空间：</strong>未来可向上推出Pro版本（方案A），向下推出Lite版本（方案C）。</li>
+                            </ol>
+                        </div>
+
+                        <div class="implementation-plan">
+                            <h4>实施计划：</h4>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-badge">阶段1</div>
+                                    <div class="timeline-content">
+                                        <h5>技术预研（1-2个月）</h5>
+                                        <p>验证30小时续航方案，优化AI降噪算法</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-badge">阶段2</div>
+                                    <div class="timeline-content">
+                                        <h5>MVP开发（3-4个月）</h5>
+                                        <p>完成核心功能开发，小批量试产</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-badge">阶段3</div>
+                                    <div class="timeline-content">
+                                        <h5>市场测试（1-2个月）</h5>
+                                        <p>100台内测，收集用户反馈，迭代优化</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-badge">阶段4</div>
+                                    <div class="timeline-content">
+                                        <h5>量产上市（6-8个月后）</h5>
+                                        <p>正式发布，市场推广，规模化生产</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 决策审计日志 -->
+                <div class="section-title">📝 决策审计日志</div>
+                <div class="audit-log">
+                    <div class="log-item">
+                        <div class="log-time">2026-07-20 10:23</div>
+                        <div class="log-action">项目创建</div>
+                        <div class="log-detail">基于机会发现"全天办公AI耳机"创建项目</div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-time">2026-07-20 14:15</div>
+                        <div class="log-action">信息采集完成</div>
+                        <div class="log-detail">采集社交媒体1234条，电商平台856条，行业报告12份</div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-time">2026-07-21 09:30</div>
+                        <div class="log-action">PM评论</div>
+                        <div class="log-detail">@张三：续航是痛点，需确认技术可行性</div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-time">2026-07-21 11:45</div>
+                        <div class="log-action">权重调整</div>
+                        <div class="log-detail">市场吸引力维度：PM将竞争强度权重从15%调整为18%</div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-time">2026-07-21 16:20</div>
+                        <div class="log-action">分数修正</div>
+                        <div class="log-detail">市场吸引力：AI评分78，PM修正为75</div>
+                    </div>
+                    <div class="log-item">
+                        <div class="log-time">2026-07-22 10:00</div>
+                        <div class="log-action">方案生成</div>
+                        <div class="log-detail">生成3套方案（高端/大众/性价比），推荐方案B</div>
+                    </div>
+                </div>
+
+                <!-- 文档下载 -->
+                <div class="document-export">
+                    <h3 class="section-title">📄 文档输出</h3>
+                    <div class="export-options">
+                        <div class="export-card">
+                            <div class="export-icon">📊</div>
+                            <h4>产品规划提案</h4>
+                            <p>完整的产品定义、市场分析、技术方案</p>
+                            <button class="btn-primary" onclick="alert('下载PDF')">下载 PDF</button>
+                        </div>
+                        <div class="export-card">
+                            <div class="export-icon">📈</div>
+                            <h4>决策分析报告</h4>
+                            <p>五维评分、优劣分析、风险评估</p>
+                            <button class="btn-primary" onclick="alert('下载PPT')">下载 PPT</button>
+                        </div>
+                        <div class="export-card">
+                            <div class="export-icon">📋</div>
+                            <h4>飞书文档</h4>
+                            <p>导出到飞书文档，支持团队协作</p>
+                            <button class="btn-primary" onclick="alert('导出到飞书')">导出到飞书</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </main>
     </div>
 
