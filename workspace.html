@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作台 - AnkerPM.copilot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/workspace.css">
+</head>
+<body>
+    <div class="workspace-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">AnkerPM.copilot</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-actions">
+                <a href="index.html" class="sidebar-btn back-btn">
+                    <span class="btn-icon">←</span>
+                    <span>返回首页</span>
+                </a>
+                <button class="sidebar-btn new-project-btn" onclick="showNewProjectModal()">
+                    <span class="btn-icon">+</span>
+                    <span>新建项目</span>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#discovery" class="nav-item active" data-page="discovery">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">机会发现</span>
+                </a>
+                <a href="#projects" class="nav-item" data-page="projects">
+                    <span class="nav-icon">📁</span>
+                    <span class="nav-text">我的项目</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-filter">
+                <div class="filter-title">🏷️ 筛选</div>
+                <div class="filter-item">进行中 <span class="badge">3</span></div>
+                <div class="filter-item">已完成 <span class="badge">5</span></div>
+                <div class="filter-item">待决策 <span class="badge">2</span></div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-name">产品经理</div>
+                </div>
+                <a href="#help" class="help-link">❓ 帮助</a>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 机会发现页面 -->
+            <div id="discovery-page" class="page active">
+                <div class="page-header">
+                    <h1 class="page-title">机会发现</h1>
+                    <div class="page-actions">
+                        <button class="btn-icon-text" onclick="refreshOpportunities()">
+                            <span>🔄</span> 刷新
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-banner">
+                    💡 AI持续监控市场，为你发现潜在机会
+                </div>
+
+                <div class="opportunities-list">
+                    <!-- 机会卡片 1 -->
+                    <div class="opportunity-card">
+                        <div class="card-header">
+                            <div class="rank-badge gold">🥇</div>
+                            <h3 class="card-title">全天办公/社交 AI 耳机</h3>
+                            <div class="score-badge">8.85分</div>
+                        </div>
+                        <p class="card-desc">机会描述：通话清晰+实时翻译+自适应透传</p>
+                        <div class="card-insights">
+                            <div class="insight-title">🔍 关键发现：</div>
+                            <ul class="insight-list">
+                                <li>社交媒体：大量"通话不清"抱怨（提及率+45%）</li>
+                                <li>技术资产：HearID、AI降噪、741项专利支撑</li>
+                                <li>竞争缺口：无人整合"清晰通话+翻译+透传"</li>
+                            </ul>
+                        </div>
+                        <div class="card-scores">
+                            <div class="score-item">市场体量 <strong>9分</strong></div>
+                            <div class="score-item">增速 <strong>8分</strong></div>
+                            <div class="score-item">空白度 <strong>10分</strong></div>
+                            <div class="score-item">能力契合 <strong>9分</strong></div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-secondary-small">查看详情</button>
+                            <button class="btn-primary-small" onclick="createProjectFromOpportunity('办公AI耳机')">基于此机会创建项目 →</button>
+                        </div>
+                    </div>
+
+                    <!-- 机会卡片 2 -->
+                    <div class="opportunity-card">
+                        <div class="card-header">
+                            <div class="rank-badge silver">🥈</div>
+                            <h3 class="card-title">睡眠耳机 Pro</h3>
+                            <div class="score-badge">7.70分</div>
+                        </div>
+                        <p class="card-desc">机会描述：升级 Sleep A30，强化舒适度和降噪</p>
+                        <div class="card-insights">
+                            <div class="insight-title">🔍 关键发现：</div>
+                            <ul class="insight-list">
+                                <li>用户反馈：Sleep A30 评价高，但仍有改进空间</li>
+                                <li>市场趋势：睡眠健康市场增长迅速（CAGR 25%）</li>
+                                <li>竞品分析：竞品多为低端，高端产品稀缺</li>
+                            </ul>
+                        </div>
+                        <div class="card-scores">
+                            <div class="score-item">市场体量 <strong>7分</strong></div>
+                            <div class="score-item">增速 <strong>9分</strong></div>
+                            <div class="score-item">空白度 <strong>7分</strong></div>
+                            <div class="score-item">能力契合 <strong>8分</strong></div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-secondary-small">查看详情</button>
+                            <button class="btn-primary-small" onclick="createProjectFromOpportunity('睡眠耳机Pro')">基于此机会创建项目 →</button>
+                        </div>
+                    </div>
+
+                    <!-- 机会卡片 3 -->
+                    <div class="opportunity-card">
+                        <div class="card-header">
+                            <div class="rank-badge bronze">🥉</div>
+                            <h3 class="card-title">运动耳夹 Pro</h3>
+                            <div class="score-badge">6.75分</div>
+                        </div>
+                        <p class="card-desc">机会描述：强化 AeroClip 的 ANC/音质</p>
+                        <div class="card-insights">
+                            <div class="insight-title">🔍 关键发现：</div>
+                            <ul class="insight-list">
+                                <li>运动场景：开放式耳机受运动人群欢迎</li>
+                                <li>用户痛点：现有产品音质和降噪不足</li>
+                                <li>市场机会：运动耳机市场竞争激烈但仍有空间</li>
+                            </ul>
+                        </div>
+                        <div class="card-scores">
+                            <div class="score-item">市场体量 <strong>7分</strong></div>
+                            <div class="score-item">增速 <strong>7分</strong></div>
+                            <div class="score-item">空白度 <strong>6分</strong></div>
+                            <div class="score-item">能力契合 <strong>8分</strong></div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn-secondary-small">查看详情</button>
+                            <button class="btn-primary-small" onclick="createProjectFromOpportunity('运动耳夹Pro')">基于此机会创建项目 →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 项目列表页面 -->
+            <div id="projects-page" class="page">
+                <div class="page-header">
+                    <h1 class="page-title">我的项目</h1>
+                    <button class="btn-primary" onclick="showNewProjectModal()">+ 新建项目</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Demo 项目卡片 -->
+                    <div class="project-card" onclick="openProject('demo-project')">
+                        <div class="project-status">进行中</div>
+                        <h3 class="project-title">办公AI耳机产品规划</h3>
+                        <p class="project-desc">基于机会发现创建的项目，目标是开发全天办公场景的AI耳机</p>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">创建时间</span>
+                                <span class="meta-value">2026-07-20</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">当前阶段</span>
+                                <span class="meta-value">深度情报</span>
+                            </div>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                            <span class="progress-text">60% 完成</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card empty-state" onclick="showNewProjectModal()">
+                        <div class="empty-icon">+</div>
+                        <p class="empty-text">创建新项目</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 新建项目模态框 -->
+    <div id="new-project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>创建新项目</h2>
+                <button class="modal-close" onclick="closeNewProjectModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>💡 描述你的产品构想</label>
+                    <textarea class="form-textarea" rows="8" placeholder="提示：可以从这些角度描述你的想法（可删除）：
+• 想解决什么用户痛点？
+• 目标用户是谁？
+• 核心功能是什么？
+• 或者直接拖拽上传项目书/调研文档
+
+📎 或拖拽文件到这里
+🔗 或粘贴飞书文档链接"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="closeNewProjectModal()">取消</button>
+                <button class="btn-secondary" onclick="createProjectDirectly()">跳过，直接创建</button>
+                <button class="btn-primary" onclick="startAIGuidedCreation()">下一步：让AI帮我补充完善 →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/workspace.js"></script>
+</body>
+</html>
