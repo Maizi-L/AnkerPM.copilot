@@ -504,3 +504,119 @@ body {
         flex-direction: column;
     }
 }
+
+/* 功能卡片新增样式 */
+.feature-pain {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.feature-pain strong {
+    color: var(--primary-color);
+}
+
+.feature-solution {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.feature-solution strong {
+    color: var(--secondary-color);
+}
+
+/* 技术方案表格 */
+.tech-table-wrapper {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    margin-bottom: 32px;
+    overflow-x: auto;
+}
+
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tech-table th,
+.tech-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tech-table thead th {
+    background: var(--bg-light);
+    color: var(--dark-color);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.tech-table tbody td {
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.tech-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tech-table tbody tr:hover {
+    background: var(--bg-light);
+}
+
+/* 技术亮点 */
+.tech-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.highlight-card {
+    background: white;
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.highlight-card h4 {
+    font-size: 18px;
+    color: var(--dark-color);
+    margin-bottom: 16px;
+}
+
+.highlight-card p {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.highlight-card p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight-card strong {
+    color: var(--primary-color);
+}
+
+/* 功能网格调整 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-highlights {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目详情 - AnkerPM.copilot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/workspace.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <div class="workspace-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">AnkerPM.copilot</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-actions">
+                <a href="workspace.html" class="sidebar-btn back-btn">
+                    <span class="btn-icon">←</span>
+                    <span>返回</span>
+                </a>
+                <button class="sidebar-btn new-project-btn" onclick="alert('新建项目功能')">
+                    <span class="btn-icon">+</span>
+                    <span>新建项目</span>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#overview" class="nav-item active" data-page="overview">
+                    <span class="nav-icon">📋</span>
+                    <span class="nav-text">项目概览</span>
+                </a>
+                <a href="#dashboard" class="nav-item" data-page="dashboard">
+                    <span class="nav-icon">🛰️</span>
+                    <span class="nav-text">信息看板</span>
+                </a>
+                <a href="#insight" class="nav-item" data-page="insight">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">深度情报</span>
+                </a>
+                <a href="#cocreation" class="nav-item" data-page="cocreation">
+                    <span class="nav-icon">🤝</span>
+                    <span class="nav-text">人机共创</span>
+                </a>
+                <a href="#decision" class="nav-item" data-page="decision">
+                    <span class="nav-icon">🎯</span>
+                    <span class="nav-text">人机协作量化决策</span>
+                </a>
+                <a href="#proposal" class="nav-item" data-page="proposal">
+                    <span class="nav-icon">📐</span>
+                    <span class="nav-text">方案对比</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-name">产品经理</div>
+                </div>
+                <a href="#help" class="help-link">❓ 帮助</a>
+            </div>
+        </aside>
+
+        <!-- 主内容区 -->
+        <main class="main-content">
+            <!-- 项目概览页面 -->
+            <div id="overview-page" class="page active">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">办公AI耳机产品规划</h1>
+                        <p class="page-subtitle">基于机会发现创建 · 2026-07-20</p>
+                    </div>
+                    <div class="status-badge active-badge">进行中</div>
+                </div>
+
+                <!-- 项目基本信息 -->
+                <div class="info-card">
+                    <h3 class="card-title">项目基本信息</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">项目名称</span>
+                            <span class="info-value">办公AI耳机产品规划</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">创建时间</span>
+                            <span class="info-value">2026-07-20</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">当前阶段</span>
+                            <span class="info-value">深度情报</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">决策紧急程度</span>
+                            <span class="info-value">中等</span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h4>产品构想</h4>
+                        <p>开发一款针对全天办公场景的AI耳机，主要解决"通话不清晰"的痛点。核心功能包括：AI通话降噪、实时翻译、自适应透传模式。</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h4>目标用户</h4>
+                        <p>开放式工位的知识工作者，一天需要佩戴耳机8小时以上，频繁参加线上会议和电话沟通。</p>
+                    </div>
+                </div>
+
+                <!-- 工作流进度 -->
+                <div class="workflow-progress-card">
+                    <h3 class="card-title">工作流进度</h3>
+                    <div class="progress-steps">
+                        <div class="progress-step completed">
+                            <div class="step-circle">✓</div>
+                            <div class="step-label">项目概览</div>
+                        </div>
+                        <div class="progress-line completed"></div>
+                        <div class="progress-step completed">
+                            <div class="step-circle">✓</div>
+                            <div class="step-label">信息看板</div>
+                        </div>
+                        <div class="progress-line completed"></div>
+                        <div class="progress-step active">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">深度情报</div>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">
+                            <div class="step-circle">4</div>
+                            <div class="step-label">人机共创</div>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">
+                            <div class="step-circle">5</div>
+                            <div class="step-label">量化决策</div>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">
+                            <div class="step-circle">6</div>
+                            <div class="step-label">方案对比</div>
+                        </div>
+                    </div>
+                    <p class="progress-tip">💡 点击左侧导航可以跳转到任意环节</p>
+                </div>
+
+                <!-- 快速操作 -->
+                <div class="quick-actions">
+                    <h3 class="card-title">快速操作</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="switchPage('dashboard')">
+                            <span class="action-icon">🛰️</span>
+                            <span>查看信息看板</span>
+                        </button>
+                        <button class="action-btn" onclick="switchPage('insight')">
+                            <span class="action-icon">📊</span>
+                            <span>查看深度情报</span>
+                        </button>
+                        <button class="action-btn" onclick="switchPage('decision')">
+                            <span class="action-icon">🎯</span>
+                            <span>开始量化决策</span>
+                        </button>
+                        <button class="action-btn" onclick="switchPage('proposal')">
+                            <span class="action-icon">📐</span>
+                            <span>生成方案对比</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他页面（信息看板、深度情报等）-->
+            <div id="dashboard-page" class="page">
+                <div class="page-header">
+                    <h1 class="page-title">信息看板</h1>
+                </div>
+                <div class="placeholder-content">
+                    <div class="placeholder-icon">🛰️</div>
+                    <h3>信息看板功能开发中</h3>
+                    <p>完整版将展示数据采集进度、AI初步分析和机会发现</p>
+                </div>
+            </div>
+
+            <div id="insight-page" class="page">
+                <div class="page-header">
+                    <h1 class="page-title">深度情报</h1>
+                </div>
+                <div class="placeholder-content">
+                    <div class="placeholder-icon">📊</div>
+                    <h3>深度情报功能开发中</h3>
+                    <p>完整版将展示VOC分析、技术资产盘点和竞品功能矩阵</p>
+                </div>
+            </div>
+
+            <div id="cocreation-page" class="page">
+                <div class="page-header">
+                    <h1 class="page-title">人机共创</h1>
+                </div>
+                <div class="placeholder-content">
+                    <div class="placeholder-icon">🤝</div>
+                    <h3>人机共创功能开发中</h3>
+                    <p>完整版将提供需求澄清、红队压测、用户替身访谈和专家评审</p>
+                </div>
+            </div>
+
+            <div id="decision-page" class="page">
+                <div class="page-header">
+                    <h1 class="page-title">人机协作量化决策</h1>
+                </div>
+                <div class="placeholder-content">
+                    <div class="placeholder-icon">🎯</div>
+                    <h3>量化决策功能开发中</h3>
+                    <p>完整版将提供五维评分、权重调整和融合分析</p>
+                </div>
+            </div>
+
+            <div id="proposal-page" class="page">
+                <div class="page-header">
+                    <h1 class="page-title">方案对比</h1>
+                </div>
+                <div class="placeholder-content">
+                    <div class="placeholder-icon">📐</div>
+                    <h3>方案对比功能开发中</h3>
+                    <p>完整版将生成三套方案并提供对比分析和文档输出</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>
