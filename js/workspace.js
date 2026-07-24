@@ -27,7 +27,7 @@ function refreshOpportunities() {
 
 // 显示新建项目模态框
 function showNewProjectModal() {
-    document.getElementById('new-project-modal').classList.add('active');
+    window.location.href = 'new-project.html';
 }
 
 // 关闭新建项目模态框

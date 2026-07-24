@@ -95,3 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// 补充上传文件
+function uploadMoreFiles() {
+    alert('上传文件功能\n\n在完整版中，你可以：\n\n📎 上传文件（PDF/Word/Excel/PPT）\n🔗 粘贴飞书文档链接\n📊 上传调研数据\n\n这些资料将被 AI 自动分析并融入到深度情报中。');
+}

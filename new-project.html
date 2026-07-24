@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新建项目 - AnkerPM.copilot</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/workspace.css">
+    <link rel="stylesheet" href="css/new-project.css">
+</head>
+<body>
+    <div class="new-project-container">
+        <div class="new-project-header">
+            <a href="workspace.html" class="back-link">
+                <span class="back-icon">←</span>
+                <span>返回工作台</span>
+            </a>
+            <h1 class="header-title">创建新项目</h1>
+        </div>
+
+        <!-- Step 1: 自由描述 -->
+        <div id="step1" class="step-container active">
+            <div class="step-content">
+                <div class="step-indicator">
+                    <div class="step-number active">1</div>
+                    <div class="step-line"></div>
+                    <div class="step-number">2</div>
+                </div>
+                <h2 class="step-title">Step 1: 描述你的产品构想</h2>
+                
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>💡 描述你的产品构想</label>
+                        <textarea id="product-idea" class="form-textarea" rows="10" placeholder="提示：可以从这些角度描述你的想法（可删除）：
+• 想解决什么用户痛点？
+• 目标用户是谁？
+• 核心功能是什么？
+• 或者直接拖拽上传项目书/调研文档
+
+📎 或拖拽文件到这里
+🔗 或粘贴飞书文档链接"></textarea>
+                    </div>
+                    
+                    <div class="button-group">
+                        <a href="workspace.html" class="btn-secondary">取消</a>
+                        <button class="btn-secondary" onclick="skipToOverview()">跳过，直接创建</button>
+                        <button class="btn-primary" onclick="goToStep2()">下一步：让AI帮我补充完善 →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: AI引导式问答 -->
+        <div id="step2" class="step-container">
+            <div class="step-content">
+                <div class="step-indicator">
+                    <div class="step-number completed">✓</div>
+                    <div class="step-line completed"></div>
+                    <div class="step-number active">2</div>
+                </div>
+                <h2 class="step-title">Step 2: AI 引导式问答</h2>
+                
+                <div class="qa-section">
+                    <div class="qa-intro">
+                        <p>AI 将会问你 5 个问题来完善项目信息。其中 2 个必答，3 个可选。</p>
+                    </div>
+
+                    <!-- 问题1 -->
+                    <div class="qa-item">
+                        <div class="qa-badge required">必答</div>
+                        <div class="qa-question">
+                            <div class="qa-icon">🤖</div>
+                            <div class="qa-text">
+                                <h4>问题 1：目标用户的主要使用场景</h4>
+                                <p>请描述你的目标用户在什么场景下会使用这个产品？他们面临的主要问题是什么？</p>
+                            </div>
+                        </div>
+                        <textarea class="qa-answer" id="answer1" rows="4" placeholder="例如：开放式办公室的知识工作者，需要长时间佩戴耳机参加会议，但现有产品通话效果差..."></textarea>
+                    </div>
+
+                    <!-- 问题2 -->
+                    <div class="qa-item">
+                        <div class="qa-badge required">必答</div>
+                        <div class="qa-question">
+                            <div class="qa-icon">🤖</div>
+                            <div class="qa-text">
+                                <h4>问题 2：决策紧急程度</h4>
+                                <p>这个项目的决策时间要求如何？是否有明确的时间节点？</p>
+                            </div>
+                        </div>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="urgency" value="high">
+                                <span class="radio-label">
+                                    <strong>紧急</strong> - 1个月内需要决策
+                                </span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="urgency" value="medium" checked>
+                                <span class="radio-label">
+                                    <strong>中等</strong> - 1-3个月内决策
+                                </span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="urgency" value="low">
+                                <span class="radio-label">
+                                    <strong>不急</strong> - 3个月以上
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 问题3 -->
+                    <div class="qa-item">
+                        <div class="qa-badge optional">可选</div>
+                        <div class="qa-question">
+                            <div class="qa-icon">🤖</div>
+                            <div class="qa-text">
+                                <h4>问题 3：预期价格区间</h4>
+                                <p>你预期这个产品的售价在什么范围？这有助于 AI 分析市场定位。</p>
+                            </div>
+                        </div>
+                        <textarea class="qa-answer" id="answer3" rows="3" placeholder="例如：500-800元，定位中端市场..."></textarea>
+                    </div>
+
+                    <!-- 问题4 -->
+                    <div class="qa-item">
+                        <div class="qa-badge optional">可选</div>
+                        <div class="qa-question">
+                            <div class="qa-icon">🤖</div>
+                            <div class="qa-text">
+                                <h4>问题 4：竞品参考</h4>
+                                <p>有没有类似的竞品或参考产品？他们有哪些优缺点？</p>
+                            </div>
+                        </div>
+                        <textarea class="qa-answer" id="answer4" rows="3" placeholder="例如：Sony WF-1000XM5 音质好但价格高，AirPods Pro 生态好但降噪一般..."></textarea>
+                    </div>
+
+                    <!-- 问题5 -->
+                    <div class="qa-item">
+                        <div class="qa-badge optional">可选</div>
+                        <div class="qa-question">
+                            <div class="qa-icon">🤖</div>
+                            <div class="qa-text">
+                                <h4>问题 5：市场背景</h4>
+                                <p>是否有特殊的市场趋势或背景信息需要 AI 了解？</p>
+                            </div>
+                        </div>
+                        <textarea class="qa-answer" id="answer5" rows="3" placeholder="例如：远程办公趋势导致耳机使用时长增加，用户对通话质量要求提高..."></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn-secondary" onclick="backToStep1()">← 上一步</button>
+                        <button class="btn-primary" onclick="createProject()">完成并创建项目 →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/new-project.js"></script>
+</body>
+</html>

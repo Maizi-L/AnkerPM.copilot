@@ -24,7 +24,7 @@
                     <span class="btn-icon">←</span>
                     <span>返回</span>
                 </a>
-                <button class="sidebar-btn new-project-btn" onclick="alert('新建项目功能')">
+                <button class="sidebar-btn new-project-btn" onclick="window.location.href='new-project.html'">
                     <span class="btn-icon">+</span>
                     <span>新建项目</span>
                 </button>
@@ -61,8 +61,8 @@
                 <div class="user-info">
                     <div class="user-avatar">👤</div>
                     <div class="user-name">产品经理</div>
+                    <a href="#help" class="help-link">❓ 帮助</a>
                 </div>
-                <a href="#help" class="help-link">❓ 帮助</a>
             </div>
         </aside>
 
@@ -212,6 +212,28 @@
                             <div class="progress-bar-fill" style="width: 100%"></div>
                         </div>
                         <div class="source-status completed">完成</div>
+                    </div>
+                    <div class="source-card upload-card">
+                        <div class="source-icon">📎</div>
+                        <h4 class="source-name">用户上传资料</h4>
+                        <div class="source-count">已上传 3 个文件</div>
+                        <div class="upload-files">
+                            <div class="file-item">
+                                <span class="file-icon">📄</span>
+                                <span class="file-name">产品初稿.pdf</span>
+                            </div>
+                            <div class="file-item">
+                                <span class="file-icon">📊</span>
+                                <span class="file-name">市场调研.xlsx</span>
+                            </div>
+                            <div class="file-item">
+                                <span class="file-icon">🔗</span>
+                                <span class="file-name">飞书文档链接</span>
+                            </div>
+                        </div>
+                        <button class="upload-more-btn" onclick="uploadMoreFiles()">
+                            <span>+</span> 补充上传
+                        </button>
                     </div>
                 </div>
 

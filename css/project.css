@@ -270,7 +270,7 @@
 
 .data-sources {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-bottom: 32px;
 }
@@ -1765,5 +1765,75 @@
     .log-item {
         grid-template-columns: 1fr;
         gap: 8px;
+    }
+}
+
+/* 用户上传资料卡片 */
+.source-card.upload-card {
+    background: #f0f8ff;
+    border: 2px dashed var(--primary-color);
+}
+
+.upload-files {
+    margin: 12px 0;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--text-dark);
+}
+
+.file-icon {
+    font-size: 16px;
+}
+
+.file-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.upload-more-btn {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 12px;
+}
+
+.upload-more-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.upload-more-btn span {
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .data-sources {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .data-sources {
+        grid-template-columns: 1fr;
     }
 }

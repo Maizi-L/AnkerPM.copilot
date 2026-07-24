@@ -157,7 +157,6 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 12px;
 }
 
 .user-avatar {
@@ -174,6 +173,7 @@
 .user-name {
     font-size: 14px;
     font-weight: 600;
+    flex: 1;
 }
 
 .help-link {
