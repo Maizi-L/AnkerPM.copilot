@@ -107,4 +107,4 @@ AnkerPM.copilot 是一个 AI 原生产品规划工作台，旨在帮助硬件产
 
 ---
 
-🚀 **AnkerPM.copilot - 用 AI 重新定义产品规划工作流**
+🚀 **AnkerPM.copilot - 硬件产品经理的 AI 协同规划工作台**
